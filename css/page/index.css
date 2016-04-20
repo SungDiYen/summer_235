@@ -12,15 +12,16 @@ body > .header {
   background: rgba(255, 168, 0, 0.8);
 }
 /* line 7, ../../scss/basic/_layout.scss */
-body > .header > nav {
+body > .header > nav.navbar {
   border: 0;
+  margin: 0;
 }
-/* line 9, ../../scss/basic/_layout.scss */
-body > .header > nav > .row {
+/* line 10, ../../scss/basic/_layout.scss */
+body > .header > nav.navbar > .row {
   display: -webkit-flex;
   display: flex;
 }
-/* line 15, ../../scss/basic/_layout.scss */
+/* line 16, ../../scss/basic/_layout.scss */
 body > .header .list li a {
   font-size: 2.1rem;
   font-weight: 600;
@@ -28,7 +29,7 @@ body > .header .list li a {
   color: #0c1318;
   padding: 10px 45px;
 }
-/* line 21, ../../scss/basic/_layout.scss */
+/* line 22, ../../scss/basic/_layout.scss */
 body > .header .list li a .en {
   display: block;
   font-size: 1.6rem;
@@ -38,12 +39,12 @@ body > .header .list li a .en {
   color: #f8f7ed;
   text-align: center;
 }
-/* line 30, ../../scss/basic/_layout.scss */
+/* line 31, ../../scss/basic/_layout.scss */
 body > .header .list li a:hover {
   background: #ffa800;
   color: #f8f7ed;
 }
-/* line 37, ../../scss/basic/_layout.scss */
+/* line 38, ../../scss/basic/_layout.scss */
 body > .header .lang {
   color: #9c6200;
   font-size: 2.1rem;
@@ -53,12 +54,12 @@ body > .header .lang {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 43, ../../scss/basic/_layout.scss */
+/* line 44, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav {
   display: -webkit-flex;
   display: flex;
 }
-/* line 45, ../../scss/basic/_layout.scss */
+/* line 46, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li {
   align-self: center;
   width: 34px;
@@ -76,47 +77,82 @@ body > .header .lang > .nav li {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 56, ../../scss/basic/_layout.scss */
+/* line 57, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li.en {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 1.45;
 }
-/* line 61, ../../scss/basic/_layout.scss */
+/* line 62, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li.active {
   color: #ffa800;
   background: #fff;
 }
-/* line 64, ../../scss/basic/_layout.scss */
+/* line 65, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li.active:hover {
   color: #ffa800;
 }
-/* line 68, ../../scss/basic/_layout.scss */
+/* line 69, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li:hover {
   border: 1px solid #fff;
   color: #fff;
 }
 
-/* line 77, ../../scss/basic/_layout.scss */
+/* line 78, ../../scss/basic/_layout.scss */
 body > .footer > .top {
   background: #fef8eb;
 }
-/* line 80, ../../scss/basic/_layout.scss */
+/* line 81, ../../scss/basic/_layout.scss */
+body > .footer > .top .time .title {
+  font-size: 28px;
+  color: #ffa800;
+}
+/* line 86, ../../scss/basic/_layout.scss */
+body > .footer > .top .time .time_content .unit {
+  border: 3px solid #ffa800;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  height: 140px;
+  width: 140px;
+  color: #ffa800;
+  font-family: "Corbel";
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  text-align: center;
+}
+/* line 98, ../../scss/basic/_layout.scss */
+body > .footer > .top .time .time_content .unit h6 {
+  font-size: 6.4rem;
+  font-weight: bold;
+  font-style: italic;
+  margin: 0;
+}
+/* line 104, ../../scss/basic/_layout.scss */
+body > .footer > .top .time .time_content .unit p {
+  font-size: 1.8rem;
+}
+/* line 111, ../../scss/basic/_layout.scss */
 body > .footer > .bottom {
   background: #ffa800;
   color: #f8f7ed;
   font-size: 1.4rem;
 }
-/* line 84, ../../scss/basic/_layout.scss */
+/* line 115, ../../scss/basic/_layout.scss */
 body > .footer > .bottom .copy {
   margin-top: 12px;
   margin-bottom: 12px;
 }
-/* line 88, ../../scss/basic/_layout.scss */
+/* line 119, ../../scss/basic/_layout.scss */
 body > .footer > .bottom p {
   margin: 0;
 }
-/* line 90, ../../scss/basic/_layout.scss */
+/* line 121, ../../scss/basic/_layout.scss */
 body > .footer > .bottom p:first-of-type {
   margin-bottom: 4px;
 }
@@ -124,43 +160,44 @@ body > .footer > .bottom p:first-of-type {
 /* line 3, ../../scss/page/index.scss */
 .box .box_word .upper p, .box .box_word .title h3 {
   line-height: 1;
-  display: inline;
+  display: inline-block;
   background: rgba(0, 0, 0, 0.8);
   margin: 0;
+  padding: 5px 8px;
 }
 
-/* line 13, ../../scss/page/index.scss */
+/* line 14, ../../scss/page/index.scss */
 .box .box_word .upper p {
   color: #ffa800;
   font-size: 2.4rem;
 }
-/* line 20, ../../scss/page/index.scss */
+/* line 21, ../../scss/page/index.scss */
 .box .box_word .title h3 {
   color: #fff;
   font-size: 3.6rem;
 }
-/* line 28, ../../scss/page/index.scss */
+/* line 29, ../../scss/page/index.scss */
 .box.news .title {
   margin-bottom: 8px;
 }
-/* line 30, ../../scss/page/index.scss */
+/* line 31, ../../scss/page/index.scss */
 .box.news .title h3 {
   font-size: 2.4rem;
   color: #0c1318;
   font-weight: 600;
 }
-/* line 35, ../../scss/page/index.scss */
+/* line 36, ../../scss/page/index.scss */
 .box.news .title .en {
   color: #ffa800;
   font-weight: 400;
 }
-/* line 42, ../../scss/page/index.scss */
+/* line 43, ../../scss/page/index.scss */
 .box.news .list-group .list-group-item {
   font-size: 1.5rem;
   border: 0px;
   padding: 6px 15px 6px 0;
 }
-/* line 46, ../../scss/page/index.scss */
+/* line 47, ../../scss/page/index.scss */
 .box.news .list-group .list-group-item .date {
   font-weight: 400;
 }

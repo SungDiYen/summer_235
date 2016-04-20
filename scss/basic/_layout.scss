@@ -4,8 +4,9 @@
 
 body > .header {
 	background: rgba($og, .8);
-	>nav {
+	>nav.navbar {
 		border: 0;
+		margin: 0;
 		>.row {
 			@include display-flex;
 		}
@@ -76,6 +77,36 @@ body > .header {
 body >.footer {
 	>.top {
 		background: $og-light;
+		.time {
+			.title {
+				font-size: 28px;
+				color: $text-og;
+			}
+			.time_content {
+				.unit {
+					border: 3px solid $og;
+					@include border-radius(10px);
+					display: inline-block;
+					height: 140px;
+					width:  140px;
+					color: $og;
+					font-family: "Corbel";
+					@include display-flex(inline-flex);
+					@include justify-content(center);
+					@include align-items(center);
+					text-align: center;
+					h6 {
+						font-size: rem(64);
+						font-weight: bold;
+						font-style: italic;
+						margin: 0;
+					}
+					p {
+						font-size: rem(18);
+					}
+				}
+			}
+		}
 	}
 	>.bottom {
 		background: $og;

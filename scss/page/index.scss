@@ -2,9 +2,10 @@
 
 %box-text-setup {
 	line-height: 1;
-	display: inline;
+	display: inline-block;
 	background: rgba($bk, .8);
 	margin: 0;
+	padding: 5px 8px;
 }
 
 .box {
