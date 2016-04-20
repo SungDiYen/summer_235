@@ -1,0 +1,52 @@
+@import "basic/_layout.scss";
+
+%box-text-setup {
+	line-height: 1;
+	display: inline;
+	background: rgba($bk, .8);
+	margin: 0;
+}
+
+.box {
+	.box_word {
+		.upper {
+			p {
+				@extend %box-text-setup;
+				color: $og;
+				font-size: rem(24);
+			}
+		}
+		.title {
+			h3 {
+				@extend %box-text-setup;
+				color: $wt;
+				font-size: rem(36);
+			}
+		}
+	}
+	&.news {
+		.title {
+			margin-bottom: 8px;
+			h3 {
+				font-size: rem(24);
+				color: $text-bk;
+				font-weight: 600;
+			}
+			.en {
+
+				color: $text-og;
+				font-weight: 400;
+			}
+		}
+		.list-group {
+			.list-group-item {
+				font-size: rem(15);
+				border: 0px;
+				padding: 6px 15px 6px 0;
+				.date {
+					font-weight: 400;
+				}
+			}
+		}
+	}
+}

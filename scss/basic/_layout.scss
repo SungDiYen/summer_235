@@ -1,0 +1,95 @@
+@import "basic/_var.scss", 
+		"basic/_mixin.scss",
+		"compass";
+
+body > .header {
+	background: rgba($og, .8);
+	>nav {
+		border: 0;
+		>.row {
+			@include display-flex;
+		}
+	}
+	.list {
+		li {
+			a {
+				font-size: rem(21);
+				font-weight: 600;
+				letter-spacing: 2px;
+				color: $text-bk;
+				padding: 10px 45px;
+				.en {
+					display: block;
+					font-size: rem(16);
+					line-height: 1.8;
+					font-weight: 400;
+					letter-spacing: 1px;
+					color: $text-wt;
+					text-align: center;
+				}
+				&:hover {
+					background: $og;
+					color: $text-wt;
+				}
+			}
+		}
+	}
+	.lang {
+		color: $og-dark;
+		font-size: rem(21);
+		font-weight: 900;
+		@include display-flex;
+		@include justify-content(center);
+		>.nav {
+			@include display-flex;
+			li {
+				align-self: center;
+				width: 34px;
+				height: 34px;
+				@include border-radius(50px);
+				text-align: center;
+				padding: 2px;
+				margin: 0 4px;
+				cursor: pointer;
+				border: 1px solid rgba($wt, 0);
+				@include transition(all .2s ease-in);
+				&.en {
+					font-weight: 400;
+					font-size: rem(19);
+					line-height: 1.45;
+				}
+				&.active {
+					color: $og;
+					background: $wt;
+					&:hover {
+						color: $og;
+					}
+				}
+				&:hover {
+					border: 1px solid $wt;
+					color: $wt;
+				}
+			}
+		}
+	}
+}
+body >.footer {
+	>.top {
+		background: $og-light;
+	}
+	>.bottom {
+		background: $og;
+		color: $text-wt;
+		font-size: rem(14);
+		.copy {
+			margin-top:    12px;
+			margin-bottom: 12px;
+		}
+		p {
+			margin: 0;
+			&:first-of-type {
+				margin-bottom: 4px;
+			}
+		}
+	}
+}
