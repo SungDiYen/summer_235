@@ -2,26 +2,95 @@
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 /*	color schema	*/
 /*	font-setting	*/
-/* line 26, ../../scss/basic/_var.scss */
 body {
   font-family: "cwTeXYen","Helvetica Neue",Helvetica, "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", Arial,"新細明體",sans-serif;
 }
 
-/* line 5, ../../scss/basic/_layout.scss */
+.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-trifi, .sponsor-uni {
+  background-image: url('../images/sponsor-s55926cbd7e.png');
+  background-repeat: no-repeat;
+}
+
+.sponsor-AE {
+  background-position: 0 0;
+}
+
+.sponsor-MOTC {
+  background-position: 0 -46px;
+}
+
+.sponsor-bestRadio {
+  background-position: 0 -88px;
+}
+
+.sponsor-bu {
+  background-position: 0 -130px;
+}
+
+.sponsor-familyM {
+  background-position: 0 -188px;
+}
+
+.sponsor-gomaji {
+  background-position: 0 -230px;
+}
+
+.sponsor-kingyo {
+  background-position: 0 -277px;
+}
+
+.sponsor-kuos {
+  background-position: 0 -319px;
+}
+
+.sponsor-sony {
+  background-position: 0 -368px;
+}
+
+.sponsor-trifi {
+  background-position: 0 -402px;
+}
+
+.sponsor-uni {
+  background-position: 0 -446px;
+}
+
+.sponsor-MOTC {
+  width: 144px;
+  height: 22px;
+}
+
+.sponsor-uni {
+  width: 64px;
+  height: 22px;
+}
+
+.sponsor-familyM {
+  width: 83px;
+  height: 22px;
+}
+
+.sponsor-sony {
+  width: 81px;
+  height: 14px;
+}
+
+.sponsor-kingyo {
+  width: 109px;
+  height: 22px;
+}
+
 body > .header {
   background: rgba(255, 168, 0, 0.8);
 }
-/* line 7, ../../scss/basic/_layout.scss */
 body > .header > nav.navbar {
   border: 0;
   margin: 0;
 }
-/* line 10, ../../scss/basic/_layout.scss */
 body > .header > nav.navbar > .row {
   display: -webkit-flex;
   display: flex;
 }
-/* line 16, ../../scss/basic/_layout.scss */
 body > .header .list li a {
   font-size: 2.1rem;
   font-weight: 600;
@@ -29,7 +98,6 @@ body > .header .list li a {
   color: #0c1318;
   padding: 10px 45px;
 }
-/* line 22, ../../scss/basic/_layout.scss */
 body > .header .list li a .en {
   display: block;
   font-size: 1.6rem;
@@ -39,12 +107,10 @@ body > .header .list li a .en {
   color: #f8f7ed;
   text-align: center;
 }
-/* line 31, ../../scss/basic/_layout.scss */
 body > .header .list li a:hover {
   background: #ffa800;
   color: #f8f7ed;
 }
-/* line 38, ../../scss/basic/_layout.scss */
 body > .header .lang {
   color: #9c6200;
   font-size: 2.1rem;
@@ -54,12 +120,10 @@ body > .header .lang {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 44, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav {
   display: -webkit-flex;
   display: flex;
 }
-/* line 46, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li {
   align-self: center;
   width: 34px;
@@ -77,37 +141,30 @@ body > .header .lang > .nav li {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 57, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li.en {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 1.45;
 }
-/* line 62, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li.active {
   color: #ffa800;
   background: #fff;
 }
-/* line 65, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li.active:hover {
   color: #ffa800;
 }
-/* line 69, ../../scss/basic/_layout.scss */
 body > .header .lang > .nav li:hover {
   border: 1px solid #fff;
   color: #fff;
 }
 
-/* line 78, ../../scss/basic/_layout.scss */
 body > .footer > .top {
   background: #fef8eb;
 }
-/* line 81, ../../scss/basic/_layout.scss */
 body > .footer > .top .time .title {
   font-size: 28px;
   color: #ffa800;
 }
-/* line 86, ../../scss/basic/_layout.scss */
 body > .footer > .top .time .time_content .unit {
   border: 3px solid #ffa800;
   -moz-border-radius: 10px;
@@ -126,38 +183,31 @@ body > .footer > .top .time .time_content .unit {
   align-items: center;
   text-align: center;
 }
-/* line 98, ../../scss/basic/_layout.scss */
 body > .footer > .top .time .time_content .unit h6 {
   font-size: 6.4rem;
   font-weight: bold;
   font-style: italic;
   margin: 0;
 }
-/* line 104, ../../scss/basic/_layout.scss */
 body > .footer > .top .time .time_content .unit p {
   font-size: 1.8rem;
 }
-/* line 111, ../../scss/basic/_layout.scss */
 body > .footer > .bottom {
   background: #ffa800;
   color: #f8f7ed;
   font-size: 1.4rem;
 }
-/* line 115, ../../scss/basic/_layout.scss */
 body > .footer > .bottom .copy {
   margin-top: 12px;
   margin-bottom: 12px;
 }
-/* line 119, ../../scss/basic/_layout.scss */
 body > .footer > .bottom p {
   margin: 0;
 }
-/* line 121, ../../scss/basic/_layout.scss */
 body > .footer > .bottom p:first-of-type {
   margin-bottom: 4px;
 }
 
-/* line 3, ../../scss/page/index.scss */
 .box .box_word .upper p, .box .box_word .title h3 {
   line-height: 1;
   display: inline-block;
@@ -166,38 +216,31 @@ body > .footer > .bottom p:first-of-type {
   padding: 5px 8px;
 }
 
-/* line 14, ../../scss/page/index.scss */
 .box .box_word .upper p {
   color: #ffa800;
   font-size: 2.4rem;
 }
-/* line 21, ../../scss/page/index.scss */
 .box .box_word .title h3 {
   color: #fff;
   font-size: 3.6rem;
 }
-/* line 29, ../../scss/page/index.scss */
 .box.news .title {
   margin-bottom: 8px;
 }
-/* line 31, ../../scss/page/index.scss */
 .box.news .title h3 {
   font-size: 2.4rem;
   color: #0c1318;
   font-weight: 600;
 }
-/* line 36, ../../scss/page/index.scss */
 .box.news .title .en {
   color: #ffa800;
   font-weight: 400;
 }
-/* line 43, ../../scss/page/index.scss */
 .box.news .list-group .list-group-item {
   font-size: 1.5rem;
   border: 0px;
   padding: 6px 15px 6px 0;
 }
-/* line 47, ../../scss/page/index.scss */
 .box.news .list-group .list-group-item .date {
   font-weight: 400;
 }

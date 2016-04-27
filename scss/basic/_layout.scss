@@ -1,7 +1,8 @@
-@import "basic/_var.scss", 
+@import "compass",
+		"basic/_var.scss", 
 		"basic/_mixin.scss",
-		"compass";
-
+		"basic/_sprites.scss";
+////
 body > .header {
 	background: rgba($og, .8);
 	>nav.navbar {
