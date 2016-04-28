@@ -6,8 +6,8 @@ $sponsor-dimensions: true;
 
 //linkToClass(.folderName-imgName)
 .sponsor-trifi {
-	//width: image-width('sponsor/trifi.png');
-	//height: image-height('sponsor/trifi.png');
+	width: image-width('sponsor/trifi.png');
+	height: image-height('sponsor/trifi.png');
 }
 .sponsor-MOTC {
 	width: image-width('sponsor/MOTC.png');
@@ -29,4 +29,24 @@ $sponsor-dimensions: true;
 .sponsor-kingyo {
 	width: image-width('sponsor/kingyo.png');
 	height: image-height('sponsor/kingyo.png');
+}
+.sponsor-kuos {
+	width: image-width('sponsor/kuos.png');
+	height: image-height('sponsor/kuos.png');
+}
+.sponsor-AE {
+	width: image-width('sponsor/AE.png');
+	height: image-height('sponsor/AE.png');
+}
+.sponsor-bestRadio {
+	width: image-width('sponsor/bestRadio.png');
+	height: image-height('sponsor/bestRadio.png');
+}
+.sponsor-bu {
+	width: image-width('sponsor/bu.png');
+	height: image-height('sponsor/bu.png');
+}
+.sponsor-gomaji {
+	width: image-width('sponsor/gomaji.png');
+	height: image-height('sponsor/gomaji.png');
 }
