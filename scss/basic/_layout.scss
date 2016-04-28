@@ -11,6 +11,14 @@ body > .header {
 		>.row {
 			@include display-flex;
 		}
+		.navbar-header {
+			padding: 0;
+			.navbar-brand {
+				padding: 0;
+				position: relative;
+				z-index: 99;
+			}
+		}
 	}
 	.list {
 		li {
@@ -78,10 +86,12 @@ body > .header {
 body >.footer {
 	>.top {
 		background: $og-light;
+		padding-top: 70px;
 		.time {
 			.title {
 				font-size: 28px;
 				color: $text-og;
+				margin: 0 20px 10pxs;
 			}
 			.time_content {
 				.unit {
@@ -96,6 +106,7 @@ body >.footer {
 					@include justify-content(center);
 					@include align-items(center);
 					text-align: center;
+					margin: 0 20px;
 					h6 {
 						font-size: rem(64);
 						font-weight: bold;
@@ -108,14 +119,21 @@ body >.footer {
 				}
 			}
 		}
+		.footer_bear {
+			img {
+				width: 100%;
+				position: relative;
+				top: -55px;
+			}
+		}
 	}
 	>.bottom {
 		background: $og;
 		color: $text-wt;
 		font-size: rem(14);
 		.copy {
-			margin-top:    12px;
-			margin-bottom: 12px;
+			margin-top:    16px;
+			margin-bottom: 16px;
 		}
 		p {
 			margin: 0;

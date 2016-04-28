@@ -1,28 +1,41 @@
 @import "basic/_layout.scss";
+@import "../node_modules/slick/slick/slick.scss",
+		"../node_modules/slick/slick/slick-theme.scss";
 
 %box-text-setup {
 	line-height: 1;
 	display: inline-block;
-	background: rgba($bk, .8);
+	background: rgba($wt, 1);
 	margin: 0;
 	padding: 5px 8px;
+	color: $og;
+	@include transition(all .25s ease-out)
 }
 
+$inactive: $grey;
+
 .box {
-	.box_word {
-		.upper {
-			p {
-				@extend %box-text-setup;
-				color: $og;
-				font-size: rem(24);
-			}
+	position: relative;
+	.box_img {
+		margin-right: -15px;
+		margin-left: -15px;
+		overflow: hidden;
+		img {
+			width: 100%;
 		}
-		.title {
-			h3 {
-				@extend %box-text-setup;
-				color: $wt;
-				font-size: rem(36);
-			}
+	}
+	.box_word {
+		position: absolute;
+		bottom: 60px;
+		left: 40px;
+		.upper p {
+			@extend %box-text-setup;
+			font-size: rem(24);
+			font-weight: 300;
+		}
+		.title h3 {
+			@extend %box-text-setup;
+			font-size: rem(36);
 		}
 	}
 	&.news {
@@ -48,6 +61,141 @@
 					font-weight: 400;
 				}
 			}
+		}
+	}
+	&.goodies {
+		background: #d70870;
+	}
+	&.normal {
+		.box_img {
+			img {
+				@include transition(all .3s ease-out)
+			}
+		}
+		&:hover {
+			.box_img {
+				img {
+					@include scale(1.1);
+				}
+			}
+			.box_word {
+				.upper p , .title h3 {
+					color: $wt;
+					background: rgba($og, .8);
+					
+				}
+			}
+		}
+	}
+	.slider {
+		margin-bottom: 0;
+		.slick-arrow {
+			&.slick-prev {
+				left: 20px;
+				z-index: 9;
+			}
+			&.slick-next {
+				right: 20px;
+			}
+		}
+		.slick-dots {
+			bottom: 0;
+			li {
+				margin: 0 10px;
+				button {
+					background: $inactive;
+					@include border-radius(50%);
+					&:before {
+						color: transparent;
+					}
+				}
+				&.slick-active {
+					button {
+						background: $og;
+					}
+				}
+			}
+		}
+	}
+}
+
+//jQ
+.box-arrow {
+	//height: 50px;
+    //width: 50px;
+    z-index: 999;
+    position: absolute;
+   	cursor: pointer;
+   	margin: auto;
+   	top: 0;
+   	bottom: 0;
+   	.icon {
+   		position: absolute;
+   		display: block;
+   		top: 50%;
+   		height: 36px;
+   		width: 36px;
+		&:after, &:before {
+			content: '';
+			display: block;
+			position: relative;	
+			height: 3px;
+			width: 26px;
+		}
+   	}
+   	&.prev {
+		left: 0;
+		.icon {
+			left: 15+15px;
+			&:before {
+				@include rotate(-35deg);
+				background: $wt;
+			}
+			&:after {
+				@include rotate(35deg);
+				background: $og;
+				top: 11px;
+			}
+		}
+   	}
+   	&.next {
+		right: 0;
+		.icon {
+			right: 15px;
+			&:before {
+				@include rotate(35deg);
+				background: $og;
+			}
+			&:after {
+				@include rotate(-35deg);
+				background: $wt;
+				top: 11px;
+			}
+		}
+   	}
+}
+
+.logo.center {
+	position: absolute;
+	z-index: 999;
+    bottom: -80px;
+    left: -160px;
+    text-align: center;
+    img {
+    	width: 90%;
+    }
+}
+
+.btn {
+	&.more {
+		background: $grey;
+		@include border-radius(25px);
+		color: $wt;
+		padding: 0px 20px;
+		letter-spacing: 1px;
+		&:hover {
+			background: $og;
+
 		}
 	}
 }
