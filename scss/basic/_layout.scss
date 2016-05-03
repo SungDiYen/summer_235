@@ -2,6 +2,29 @@
 		"basic/_var.scss", 
 		"basic/_mixin.scss",
 		"basic/_sprites.scss";
+
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1441px;
+
+@mixin screen($size) {
+	@if $size == sm {
+		@media only screen and (max-width: $screen-sm){
+			@content;
+		}
+	}
+	@else if $size == md {
+   		@media only screen and (min-width: $screen-sm + 1) and (max-width: $screen-lg - 1) { @content; }
+	}
+	@else if $size == lg {
+		@media only screen and (min-width: $screen-lg + 1) and (max-width: $screen-xl - 1) { @content; }
+	}
+	@else if $size == xl {
+		@media only screen and (min-width: $screen-xl) { @content; }
+	}
+}
+
 //////
 a, button {
 	&:hover , &:active, &:focus {
@@ -10,6 +33,9 @@ a, button {
 	}
 }
 //////
+body {
+	min-width: 1366px;
+}
 body > .header {
 	background: rgba($og, .8);
 	>nav.navbar {
@@ -45,9 +71,27 @@ body > .header {
 					color: $text-wt;
 					text-align: center;
 				}
-				&:hover {
+				&:hover, &:focus {
 					background: $og;
 					color: $text-wt;
+				}
+				@include screen(lg) {
+					font-size: rem(18);
+					&.en {
+						font-size: rem(12);
+					}
+				}
+				@include screen(md) {
+					font-size: rem(18);
+					&.en {
+						font-size: rem(12);
+					}
+				}
+				@include screen(sm) {
+					font-size: rem(18);
+					&.en {
+						font-size: rem(12);
+					}
 				}
 			}
 		}
@@ -97,7 +141,10 @@ body >.footer {
 		padding-top: 20px;
 		.time {
 			position: relative;
-			bottom: -60px;
+			bottom: 0px;
+			@include screen(xl) {
+				bottom: -60px;
+			}
 			.title {
 				font-size: 28px;
 				color: $text-og;
@@ -110,14 +157,14 @@ body >.footer {
 					display: inline-block;
 					//height: 140px;
 					//width:  140px;
-					padding: 20px;
+					padding: 8px 20px;
 					color: $og;
 					font-family: "Corbel";
 					@include display-flex(inline-flex);
 					@include justify-content(center);
 					@include align-items(center);
 					text-align: center;
-					margin: 0 20px;
+					margin-right: 40px;
 					h6 {
 						font-size: rem(64);
 						font-weight: bold;
@@ -136,13 +183,21 @@ body >.footer {
 			}
 		}
 		.sponsor {
-			margin-bottom: 20px;
+			margin: 20px 0;
 			.upper {
 				@include display-flex;
+				@include justify-content(center);
 				margin-bottom: 10px;
 				.sponsor_unit {
 					margin-right: 60px;
+					@include screen(lg) {
+						margin-right: 20px;
+					}
 				}
+			}
+			.lower {
+				@include display-flex;
+				@include justify-content(center);
 			}
 			.sponsor_unit {
 				@include display-flex;
@@ -183,7 +238,8 @@ body >.footer {
 		color: $text-wt;
 		font-size: rem(14);
 		.copy {
-			margin-top:    16px;
+			text-align: center;
+			margin-top: 16px;
 			margin-bottom: 16px;
 		}
 		p {

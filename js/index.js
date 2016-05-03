@@ -58,9 +58,11 @@ $(function(){
 
 		updateClock();
 		var timeinterval = setInterval(updateClock, 1000);
+		console.log(secondsSpan)
 	}
 
 	//var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
 	var deadline = '2016/06/21 06:34:59 GMT+08:00';
 	initializeClock('clockdiv', deadline);
+
 });

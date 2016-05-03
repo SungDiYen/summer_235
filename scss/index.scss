@@ -80,6 +80,15 @@ $inactive: $grey;
 			margin-top: 20px;
 			padding: 0 30px;
 		}
+		@include screen(lg) {
+			.icon {
+				font-size: rem(32);
+			}
+			.cfa {
+				font-size: rem(21);
+				margin-top: 10px;
+			}
+		}
 	}
 	.news {
 		border-bottom: 1px solid $og;
@@ -125,13 +134,16 @@ $inactive: $grey;
 				background: $grey;
 				@include border-radius(25px);
 				color: $wt;
-				padding: 0px 20px;
+				padding: 0 20px;
 				letter-spacing: 1px;
 				position: relative;
 				z-index: 9;
 				&:hover {
 					background: $og;
-
+				}
+				@include screen(sm) {
+					padding: 0 10px;
+					font-size: rem(13);
 				}
 			}
 		}
@@ -257,4 +269,21 @@ $inactive: $grey;
     img {
     	width: 90%;
     }
+}
+
+
+///
+///
+.modal-dialog {
+	margin-top: 360px;
+	.modal-header {
+		text-align: center;
+		h4 {
+			font-size: rem(24);
+		}
+	}
+	.modal-footer {
+		border: 0;
+		text-align: center;
+	}
 }
