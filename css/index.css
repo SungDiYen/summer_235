@@ -7,7 +7,7 @@ body {
 }
 
 .sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-trifi, .sponsor-uni {
-  background-image: url('../images/sponsor-s55926cbd7e.png');
+  background-image: url('../images/sponsor-s45e764532a.png');
   background-repeat: no-repeat;
 }
 
@@ -16,43 +16,43 @@ body {
 }
 
 .sponsor-MOTC {
-  background-position: 0 -46px;
+  background-position: 0 -48px;
 }
 
 .sponsor-bestRadio {
-  background-position: 0 -88px;
+  background-position: 0 -90px;
 }
 
 .sponsor-bu {
-  background-position: 0 -130px;
+  background-position: 0 -143px;
 }
 
 .sponsor-familyM {
-  background-position: 0 -188px;
+  background-position: 0 -201px;
 }
 
 .sponsor-gomaji {
-  background-position: 0 -230px;
+  background-position: 0 -243px;
 }
 
 .sponsor-kingyo {
-  background-position: 0 -277px;
+  background-position: 0 -290px;
 }
 
 .sponsor-kuos {
-  background-position: 0 -319px;
+  background-position: 0 -332px;
 }
 
 .sponsor-sony {
-  background-position: 0 -368px;
+  background-position: 0 -381px;
 }
 
 .sponsor-trifi {
-  background-position: 0 -402px;
+  background-position: 0 -415px;
 }
 
 .sponsor-uni {
-  background-position: 0 -446px;
+  background-position: 0 -459px;
 }
 
 .sponsor-trifi {
@@ -91,13 +91,13 @@ body {
 }
 
 .sponsor-AE {
-  width: 26px;
-  height: 26px;
+  width: 114px;
+  height: 28px;
 }
 
 .sponsor-bestRadio {
-  width: 82px;
-  height: 22px;
+  width: 58px;
+  height: 33px;
 }
 
 .sponsor-bu {
