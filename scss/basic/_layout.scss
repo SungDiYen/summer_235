@@ -55,6 +55,12 @@ body > .header {
 	}
 	.list {
 		li {
+			@include screen(sm) {
+				float: left;
+			}
+			@include screen(md) {
+				float: left;
+			}
 			a {
 				font-size: rem(21);
 				//font-weight: 600;
@@ -189,6 +195,7 @@ body >.footer {
 				@include justify-content(center);
 				margin-bottom: 10px;
 				.sponsor_unit {
+					//margin-right: 60px;
 					margin-right: 60px;
 					@include screen(lg) {
 						margin-right: 20px;

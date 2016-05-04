@@ -52,8 +52,9 @@ $(function(){
 	initializeClock('clockdiv', deadline);
 
 
-	/////  counter /////
-	$.getJSON( "https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A121384372&start-date=2016-05-01&end-date=today&metrics=ga%3Apageviews&access_token=ya29.CjLYAuYHSm14g4Zr3ayH1R5uLh7GLJU_2EN-8ims-uaprFIW9VSILqLzYJojxBpji2-L8w", function( data ) {
+	/////  counterByGA /////
+	/*
+	$.getJSON("https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A121384372&start-date=2016-04-30&end-date=yesterday&metrics=ga%3Ausers&access_token=ya29.CjLYAp0-HDqN9_DPRT-vjnYsJeohyPNgxB2dG0q9D0tpvP2WmYVs-bjbzBlEgJcFXizCQg", function( data ) {
         var items = [];
         $.each( data, function( key, val ) {
             items.push( val );
@@ -61,4 +62,5 @@ $(function(){
         var PVs = items[10];
 		$("#pvs").append(PVs)
     });
+    */
 });

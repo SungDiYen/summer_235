@@ -138,6 +138,16 @@ body > .header > nav.navbar .navbar-header .navbar-brand {
   position: relative;
   z-index: 99;
 }
+@media only screen and (max-width: 768px) {
+  body > .header .list li {
+    float: left;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+  body > .header .list li {
+    float: left;
+  }
+}
 body > .header .list li a {
   font-size: 2.1rem;
   font-weight: 300;
