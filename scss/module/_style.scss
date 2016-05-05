@@ -1,0 +1,32 @@
+@import "../basic/_layout.scss";
+
+
+
+%page_title {
+	font-size: rem(32);
+	font-weight: 400;
+	color: $og;
+}
+%page_title-sub {
+	font-size: rem(21);
+	font-weight: 400;
+	color: $og;
+}
+%page_content {
+	font-size: rem(15.5);
+	font-weight: 300;
+	color: $bk;
+	line-height: 1.8;
+}
+%page_para {
+	font-size: rem(15.5);
+	font-weight: 300;
+	color: $bk;
+	line-height: 1.8;
+}
+////////
+///
+%container_layout {
+	margin-top:    60px;
+	margin-bottom: 40px;
+}

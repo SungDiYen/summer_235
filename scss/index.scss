@@ -18,7 +18,8 @@ main {
 	margin: 0;
 	padding: 5px 8px;
 	color: $og;
-	@include transition(all .25s ease-out)
+	@include transition(all .25s ease-out);
+	@extend %ff-title;
 }
 
 $inactive: $grey;
@@ -100,6 +101,7 @@ $inactive: $grey;
 				font-size: rem(28);
 				color: $text-bk;
 				font-weight: 600;
+				@extend %ff-title;
 				margin: 0;
 				.en {
 					font-size: rem(24);

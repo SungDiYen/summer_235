@@ -1,0 +1,168 @@
+@import "basic/_layout.scss";
+
+//// TOXIC ////
+.modal-dialog {
+	margin-top: 360px;
+	.modal-header {
+		text-align: center;
+		h4 {
+			font-size: rem(24);
+		}
+	}
+	.modal-footer {
+		border: 0;
+		text-align: center;
+	}
+}
+
+
+
+///////////
+main.container {
+	@extend %container_layout;
+	.upper {
+		margin-top: 30px;
+		margin-bottom: 80px;
+		.nav {
+			text-align: center;
+			margin-bottom: 40px;
+			li {
+				display: inline-block;
+				margin: 0 30px;
+				.btn {
+					// be extend
+					font-size: rem(21);
+					letter-spacing: 2px;
+					color: $og;
+					border: 1px solid $og;
+					padding: 10px 40px;
+					@include transition(all, .28s, ease-in);
+					&:hover, &:focus, &:active {
+						background: $og;
+						color: $wt;
+					}
+				}
+				&.active .btn {
+					background: $og;
+					color: $wt;
+				}
+			}
+		}
+		.intro {
+			text-align: center;
+			.title {
+				@extend %page_title;
+				margin: 0;
+				margin-bottom: 30px;	
+			}
+			.title_exp {
+				@extend %page_title-sub;
+				margin: 0;
+				color: $text-grey;
+				line-height: 1.4;
+			}
+		}
+	}
+	.lower {
+		/// Rules.html
+		&.rules-exp {
+			.spy_nav {
+				.nav {
+					@include display-flex;
+					li {
+						margin: 0 10px;
+						@include flex(1 1);
+						/*
+						@include calc(width, "(100% / 7) - 10px");
+						*/
+						&:last-of-type {
+							margin-right: 0;
+							.tab {
+								&:after {
+									display: none;
+								}
+							}
+						}
+						.tab {
+							margin: 0;
+							color: $text-grey;
+							font-size: rem(18);
+							@include transition(all, .28s, ease-in);
+							//border: 1px solid $text-grey;
+							//@include border-radius(3px);
+							border: 0;
+							letter-spacing: 1px;
+							text-align: center;
+							position: relative;
+							&:hover {
+								background: transparent;
+								color: $og;
+								border: 0;
+							}
+							&:after {
+								content: '';
+								display: block;
+								background: $grey;
+								width: 1px;
+								height: 14px;
+								position: absolute;
+								right: -10px;
+								top: 0;
+								bottom: 0;
+								margin: auto;
+							}
+						}
+						&.active {
+							.tab {
+								border: 0;
+								color: $og;
+							}
+						}
+					}
+				}
+			}
+			.spy_content {
+				//@include box-shadow(inset 0px 5px 5px -2px #aaa);
+				padding: 20px 0;
+				.pare {}
+			}
+		}
+		&.rules-involve {
+			background: $og-light;
+			border: 1px solid $og;
+			@include border-radius(3px);
+			padding: 40px;
+			.form-group {
+				>label {
+					color: $text-grey;
+					font-size: rem(16);
+					font-weight: 300;
+				}
+			}
+		}
+	}
+}
+
+label.nec {
+	position: relative;
+	&:before {
+		content: '*';
+		color: red;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.inline-gutter {
+	font-size: 0;
+}
+
+.spy_nav {
+	
+}
+.spy_content {
+	font-size: rem(16);
+	line-height: 1.6;
+	//height: 300px;
+	//overflow: scroll;
+}

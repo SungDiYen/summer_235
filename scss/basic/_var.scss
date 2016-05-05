@@ -12,6 +12,7 @@ $grey: #bbb;
 $text-og: $og;
 $text-wt: #f8f7ed;
 $text-bk: #0c1318;
+$text-grey: #949494;
 
 $disable: $grey;
 
@@ -20,11 +21,29 @@ $disable: $grey;
 
 
 $bootstrap-default: 10;
+//$bootstrap-default: 10*0.85;  //圓體校正
 @function rem($pixels, $context: $bootstrap-default) {
 	@return #{$pixels/$context}rem;
 }
 body {
-	font-family: "cwTeXYen","Helvetica Neue",Helvetica,
-				 "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei",
-				 Arial,"新細明體",sans-serif;
+	font-family:"Helvetica Neue",Helvetica,"PingFangTC-Regular",
+				"儷黑 Pro", "LiHei Pro", "微軟正黑體",
+				"Microsoft JhengHei",Arial,"新細明體",
+				sans-serif;
 }
+
+%ff-title {
+	font-family:"cwTeXYen","Helvetica Neue",Helvetica,
+				"PingFangTC-Regular",
+				"儷黑 Pro", "LiHei Pro", "微軟正黑體",
+				"Microsoft JhengHei",Arial,"新細明體",
+				sans-serif;
+}
+/*
+	font-family: PingFangTC-Regular, sans-serif;
+	font-family: PingFangTC-Ultralight, sans-serif;
+	font-family: PingFangTC-Light, sans-serif;
+	font-family: PingFangTC-Thin, sans-serif;
+	font-family: PingFangTC-Medium, sans-serif;
+	font-family: PingFangTC-Semibold, sans-serif;
+ */

@@ -3,9 +3,21 @@
 /*	color schema	*/
 /*	font-setting	*/
 body {
-  font-family: "cwTeXYen","Helvetica Neue",Helvetica, "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", Arial,"新細明體",sans-serif;
+  font-family: "Helvetica Neue",Helvetica,"PingFangTC-Regular", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei",Arial,"新細明體", sans-serif;
 }
 
+body > .footer > .top .time .title, .box .box_word .upper p, .box .box_word .title h3, .box .news .title h3 {
+  font-family: "cwTeXYen","Helvetica Neue",Helvetica, "PingFangTC-Regular", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei",Arial,"新細明體", sans-serif;
+}
+
+/*
+	font-family: PingFangTC-Regular, sans-serif;
+	font-family: PingFangTC-Ultralight, sans-serif;
+	font-family: PingFangTC-Light, sans-serif;
+	font-family: PingFangTC-Thin, sans-serif;
+	font-family: PingFangTC-Medium, sans-serif;
+	font-family: PingFangTC-Semibold, sans-serif;
+ */
 .sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-trifi, .sponsor-uni {
   background-image: url('../images/sponsor-s45e764532a.png');
   background-repeat: no-repeat;
@@ -122,6 +134,15 @@ body {
 body > .header {
   background: rgba(255, 168, 0, 0.8);
 }
+body > .header .header_below {
+  height: 300px;
+  margin: 0 -15px;
+  background: url('../images/inner_header_bg.jpg?1462357125');
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
 body > .header > nav.navbar {
   border: 0;
   margin: 0;
@@ -149,7 +170,7 @@ body > .header > nav.navbar .navbar-header .navbar-brand {
   }
 }
 body > .header .list li a {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 300;
   letter-spacing: 2px;
   color: #0c1318;
@@ -157,7 +178,7 @@ body > .header .list li a {
 }
 body > .header .list li a .en {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   font-weight: 400;
   letter-spacing: 1px;
@@ -193,9 +214,6 @@ body > .header .list li a:hover, body > .header .list li a:focus {
   }
 }
 body > .header .lang {
-  color: #9c6200;
-  font-size: 2.1rem;
-  font-weight: 900;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: center;
@@ -206,9 +224,12 @@ body > .header .lang > .nav {
   display: flex;
 }
 body > .header .lang > .nav li {
+  color: #9c6200;
+  font-size: 1.6rem;
+  font-weight: 900;
   align-self: center;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
@@ -224,8 +245,10 @@ body > .header .lang > .nav li {
 }
 body > .header .lang > .nav li.en {
   font-weight: 400;
-  font-size: 1.9rem;
+  font-size: 1.4rem;
   line-height: 1.45;
+  position: relative;
+  top: 2px;
 }
 body > .header .lang > .nav li.active {
   color: #ffa800;
@@ -253,17 +276,17 @@ body > .footer > .top .time {
   }
 }
 body > .footer > .top .time .title {
-  font-size: 28px;
+  font-size: 2.4rem;
   color: #ffa800;
-  margin: 0 20px 10pxs;
+  margin: 0 20px 10px 0;
 }
 body > .footer > .top .time .time_content .unit {
-  border: 3px solid #ffa800;
+  border: 3px solid rgba(255, 168, 0, 0.9);
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   display: inline-block;
-  padding: 8px 20px;
+  padding: 6px 26px;
   color: #ffa800;
   font-family: "Corbel";
   display: -webkit-inline-flex;
@@ -277,12 +300,15 @@ body > .footer > .top .time .time_content .unit {
 }
 body > .footer > .top .time .time_content .unit h6 {
   font-size: 6.4rem;
+  opacity: .9;
   font-weight: bold;
   font-style: italic;
   margin: 0;
 }
 body > .footer > .top .time .time_content .unit p {
   font-size: 1.8rem;
+  font-weight: 600;
+  padding-top: 5px;
 }
 body > .footer > .top .footer_bear img {
   width: 100%;
@@ -321,6 +347,7 @@ body > .footer > .top .sponsor .sponsor_unit > .title {
   display: inline-block;
   color: #636363;
   margin-right: 12px;
+  font-size: 1.3rem;
 }
 body > .footer > .top .sponsor .sponsor_unit > .content {
   display: -webkit-flex;
@@ -354,7 +381,7 @@ body > .footer > .top .counter > .content {
 body > .footer > .bottom {
   background: #ffa800;
   color: #f8f7ed;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 body > .footer > .bottom .copy {
   text-align: center;

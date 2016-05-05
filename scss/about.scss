@@ -1,0 +1,124 @@
+@import "basic/_layout.scss";
+
+//// TOXIC ////
+.modal-dialog {
+	margin-top: 360px;
+	.modal-header {
+		text-align: center;
+		h4 {
+			font-size: rem(24);
+		}
+	}
+	.modal-footer {
+		border: 0;
+		text-align: center;
+	}
+}
+
+
+///////////
+main.container {
+	@extend %container_layout;
+	padding: 36px 0px 40px;
+	//position: relative;
+	//z-index: 99+1;
+	background: $og-light;
+	border: 1px solid $og;
+	@include border-radius(3px);
+	.box {
+		width: 75%;
+		margin: 0 auto;
+		.wrap {
+			.left {
+				float: left;
+				width: 50%;
+				&.pic {
+					padding-left: 30px;
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+		.pics {
+			font-size: 0;
+			margin: 30px -10px 0;
+			img {
+				width: 25%;
+				padding: 10px;
+				overflow: hidden;
+			}
+		}
+		.title {
+			@extend %page_title;
+			font-size: rem(21);
+			margin: 20px 0 10px;
+			//border-bottom: 2px solid $og;
+			//padding-bottom: 30px;
+		}
+		.title-sub {
+			@extend %page_title-sub;
+			font-size: rem(36);
+			letter-spacing: .35rem;
+			margin: 0px 0 20px;
+		}
+		.para {
+			@extend %page_content;
+			//@include column-count(2);
+			//@include column-gap(2.85rem);
+			p:first-of-type {
+				text-indent: 2rem;
+			}
+		}
+		/*
+		.gallery {
+			margin: 30px 0;
+			.pics {
+				font-size: 0;
+				float: left;
+				width: 50%;
+				.pic {
+					display: inline-block;
+					img {
+						display: block;
+						width: 100%;
+					}
+				}
+				&.lg-1 {
+					.pic {
+						padding-right: 16px;
+						margin-bottom: 16px;
+					}
+				}
+				&.sm-4 {
+					.pic {
+						overflow: hidden;
+						width: 50%;
+						height: 136px;
+						@include screen(md) {
+							height: 111px;
+						}
+						@include screen(sm) {
+							height: 142px;
+						}
+
+						padding-right: 16px;
+						margin-bottom: 16px;
+					}
+					.figcaption {
+						font-size: rem(14);
+						color: #989898;
+						.wrap {
+							@include display-flex;
+							@include flex-direction(column);
+							@include align-items(flex-end);
+							height: 100%;
+							@include justify-content(flex-end);
+						}
+					}
+				}
+			}
+		}
+		*/
+	}
+}
