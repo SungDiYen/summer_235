@@ -507,11 +507,10 @@ main.container .box .wrap .left.pic img {
 }
 main.container .box .pics {
   font-size: 0;
-  margin: 30px -10px 0;
+  margin: 20px 0 0;
 }
 main.container .box .pics img {
-  width: 25%;
-  padding: 10px;
+  width: 20%;
   overflow: hidden;
 }
 main.container .box .title {
@@ -522,7 +521,4 @@ main.container .box .title-sub {
   font-size: 3.6rem;
   letter-spacing: .35rem;
   margin: 0px 0 20px;
-}
-main.container .box .para p:first-of-type {
-  text-indent: 2rem;
 }

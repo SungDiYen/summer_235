@@ -42,10 +42,10 @@ main.container {
 		}
 		.pics {
 			font-size: 0;
-			margin: 30px -10px 0;
+			margin: 20px 0 0;
 			img {
-				width: 25%;
-				padding: 10px;
+				width: 20%;
+				//padding: 10px;
 				overflow: hidden;
 			}
 		}
@@ -66,9 +66,6 @@ main.container {
 			@extend %page_content;
 			//@include column-count(2);
 			//@include column-gap(2.85rem);
-			p:first-of-type {
-				text-indent: 2rem;
-			}
 		}
 		/*
 		.gallery {
