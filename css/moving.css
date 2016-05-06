@@ -652,6 +652,10 @@ main.container .lower.rules-details .spy_content .section .prize-wrap .prize img
 main.container .lower.rules-details .spy_content .section .prize-wrap .prize figcaption {
   margin-top: 15px;
 }
+main.container .lower.rules-details .spy_content .section .prize-wrap .prize .ps {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+}
 main.container .lower.rules-involve {
   background: #fef8eb;
   border: 1px solid #ffa800;

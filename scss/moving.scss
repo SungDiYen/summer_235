@@ -249,6 +249,10 @@ main.container {
 							figcaption {
 								margin-top: 15px;
 							}
+							.ps {
+								color: rgba($bk, .5);
+								font-size: rem(13);
+							}
 						}
 					}
 				}
