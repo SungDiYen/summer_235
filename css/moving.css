@@ -18,8 +18,8 @@ body > .footer > .top .time .title {
 	font-family: PingFangTC-Medium, sans-serif;
 	font-family: PingFangTC-Semibold, sans-serif;
  */
-.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-trifi, .sponsor-uni {
-  background-image: url('../images/sponsor-s45e764532a.png');
+.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-tlc, .sponsor-trifi, .sponsor-uni {
+  background-image: url('../images/sponsor-s455fcca02f.png');
   background-repeat: no-repeat;
 }
 
@@ -59,12 +59,16 @@ body > .footer > .top .time .title {
   background-position: 0 -381px;
 }
 
-.sponsor-trifi {
+.sponsor-tlc {
   background-position: 0 -415px;
 }
 
+.sponsor-trifi {
+  background-position: 0 -467px;
+}
+
 .sponsor-uni {
-  background-position: 0 -459px;
+  background-position: 0 -511px;
 }
 
 .sponsor-trifi {
@@ -120,6 +124,11 @@ body > .footer > .top .time .title {
 .sponsor-gomaji {
   width: 90px;
   height: 27px;
+}
+
+.sponsor-tlc {
+  width: 49px;
+  height: 32px;
 }
 
 main.container .upper .intro .title {
@@ -621,6 +630,10 @@ main.container .lower.rules-details .spy_content .section .prize-wrap {
   flex-direction: row;
   margin: 50px 0;
 }
+main.container .lower.rules-details .spy_content .section .prize-wrap.non-pic > .intro {
+  -webkit-flex: 1 1;
+  flex: 1 1;
+}
 main.container .lower.rules-details .spy_content .section .prize-wrap > .intro {
   width: 25%;
   /*
@@ -636,6 +649,10 @@ main.container .lower.rules-details .spy_content .section .prize-wrap > .intro >
 }
 main.container .lower.rules-details .spy_content .section .prize-wrap > .intro > .para {
   margin-top: 30px;
+}
+main.container .lower.rules-details .spy_content .section .prize-wrap > .intro > .ps {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 main.container .lower.rules-details .spy_content .section .prize-wrap .prize {
   text-align: center;
@@ -695,11 +712,48 @@ main.container .lower.rules-involve .form-group .form-control-wrap.vedio-notice 
   color: #bbb;
   text-align: right;
 }
+main.container .lower.rules-involve .form_agree {
+  margin-top: 30px;
+  text-align: center;
+  margin: 0 auto;
+}
+main.container .lower.rules-involve .form_agree input[type="checkbox"] {
+  opacity: 0;
+}
+main.container .lower.rules-involve .form_agree input[type="checkbox"] + label {
+  position: relative;
+}
+main.container .lower.rules-involve .form_agree input[type="checkbox"] + label:before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #888;
+  background: #fff;
+  margin: 0 5px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  position: absolute;
+  left: -30px;
+  top: 2px;
+}
+main.container .lower.rules-involve .form_agree input[type="checkbox"]:checked + label:before {
+  border-color: #00C55D;
+  border-width: 0 2px 2px 0;
+  -moz-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  -webkit-transform: rotate(36deg);
+  transform: rotate(36deg);
+  height: 16px;
+  width: 8px;
+}
 main.container .lower.rules-involve .btns {
   width: 100%;
   margin: auto;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 main.container .lower.rules-involve .btns .btn.upload {
   width: 200px;

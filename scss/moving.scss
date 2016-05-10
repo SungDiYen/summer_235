@@ -218,6 +218,11 @@ main.container {
 						@include display-flex;
 						@include flex-direction(row);
 						margin: 50px 0;
+						&.non-pic {
+							>.intro {
+								@include flex(1 1);
+							}
+						}
 						>.intro {
 							//@include flex(1 1);
 							width: 25%;
@@ -227,6 +232,10 @@ main.container {
 							}
 							>.para {
 								margin-top: 30px;
+							}
+							>.ps {
+								font-size: rem(13);
+								color: rgba($bk, .5);
 							}
 							/*
 							>.note {
@@ -298,11 +307,48 @@ main.container {
 					}
 				}
 			}
+			.form_agree {
+				margin-top: 30px;
+				text-align: center;
+				margin: 0 auto;
+				input[type="checkbox"] {
+					opacity: 0;
+					+label {
+						position: relative;
+						&:before {
+							$size: 14px;
+							content: '';
+							display: inline-block;
+							width:  $size;
+							height: $size;
+							border: 1px solid #888;
+							background: #fff;
+							margin: 0 5px;
+							@include transition(all .2s ease-in);
+							position: absolute;
+							left: -30px;
+							top: 2px;
+
+						}
+					}
+					&:checked {
+						+label {
+							&:before {
+								border-color: #00C55D;
+								border-width: 0 2px 2px 0;
+								@include rotate(36deg);
+								height: 16px;
+								width:  8px;
+							}
+						}
+					}
+				}
+			}
 			.btns{
 				width: 100%;
 				margin: auto;
 				text-align: center;
-				margin-top: 60px;
+				margin-top: 10px;
 				.btn.upload {
 					width: 200px;
 					background: $wt;
@@ -439,10 +485,6 @@ label.nec {
 }
 .inline-gutter {
 	font-size: 0;
-}
-
-.spy_nav {
-	
 }
 .spy_content {
 	font-size: rem(16);

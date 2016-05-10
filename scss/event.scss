@@ -1,0 +1,135 @@
+@import "basic/_layout.scss";
+
+//// TOXIC ////
+.modal-dialog {
+	margin-top: 360px;
+	.modal-header {
+		text-align: center;
+		h4 {
+			font-size: rem(24);
+		}
+	}
+	.modal-footer {
+		border: 0;
+		text-align: center;
+	}
+}
+
+.events {
+	margin: 60px 0;
+	.nav-tabs {
+		margin: 30px 0 30px;
+		text-align: center;
+		border: 0;
+		li {
+			float: none;
+			display: inline-block;
+			a {
+				color: $og;
+				font-size: rem(18);
+				border: 2px solid $og;
+				background: #fff;
+				padding: 8px 40px;
+				margin: 0 5px;
+				@include border-radius(0);
+				@include transition(all .2s ease-in);
+				&:hover {
+					border: 2px solid $og;
+					color: $wt;
+					background: $og;
+				}
+			}
+			&.active a {
+				background: $og;
+				color: $wt;
+				&:focus {
+					border: 1px solid $og;
+				}
+			}
+		}
+	}
+	.event-item {
+		@include display-flex;
+		@include flex-direction(row);
+		padding: 20px 0;
+		border: 1px solid $og;
+		border-width: 1px 1px 0 1px;
+		&:last-of-type {
+			border-bottom-width: 1px;
+		}
+		&:nth-of-type(odd) {
+			background: $og-light;
+		}
+		&:nth-of-type(even) {
+			background: $wt;
+		}
+		.pic {
+			width: 340px;
+			max-height: 240px;
+			overflow: hidden;
+			@include border-radius(3px);
+			@include flex(1 1);
+			margin: 0 1rem 0 2rem;
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		.event_intro {
+			padding: 0 2rem;
+			@include flex(2 1);
+			.headline {
+				font-size: rem(21);
+				font-weight: 700;
+				margin: 0 0 .7rem 0;
+				color: $og;
+				.divide.ext {
+					display: inline-block;
+					padding: 0 16px;
+					@include scale(3, .5);
+				}
+			}
+			.line {
+				@include display-flex;
+				font-size: rem(15);
+				margin-bottom: 1.3rem;
+				color: $og;
+				&.inline {
+					@include display-flex(inline-flex);
+				}
+				&.date {
+					margin-right: 3rem;
+					position: relative;
+					&:after {
+						content: '|';
+						position: absolute;
+						right: -1.5rem;
+						color: rgba($og, .5);
+					}
+				}
+				&.location {}
+				>.title {}
+				>.content {margin: 0;}
+			}
+			.para {
+				font-size: rem(15);
+				color: rgba($bk, .78);
+				line-height: 1.8;
+			}
+			.link {
+				color: rgba($bk, .8);
+				>.content {
+					color: rgba($bk, .8);
+					&:hover {
+						color: $og;
+					}
+				}
+			}
+			.host {
+				margin-top: 3rem;
+				font-size: rem(13);
+				color: rgba($bk, .5);
+			}
+		}
+	}
+}

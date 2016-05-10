@@ -18,8 +18,8 @@ body > .footer > .top .time .title, .box .box_word .upper p, .box .box_word .tit
 	font-family: PingFangTC-Medium, sans-serif;
 	font-family: PingFangTC-Semibold, sans-serif;
  */
-.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-trifi, .sponsor-uni {
-  background-image: url('../images/sponsor-s45e764532a.png');
+.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-tlc, .sponsor-trifi, .sponsor-uni {
+  background-image: url('../images/sponsor-s455fcca02f.png');
   background-repeat: no-repeat;
 }
 
@@ -59,12 +59,16 @@ body > .footer > .top .time .title, .box .box_word .upper p, .box .box_word .tit
   background-position: 0 -381px;
 }
 
-.sponsor-trifi {
+.sponsor-tlc {
   background-position: 0 -415px;
 }
 
+.sponsor-trifi {
+  background-position: 0 -467px;
+}
+
 .sponsor-uni {
-  background-position: 0 -459px;
+  background-position: 0 -511px;
 }
 
 .sponsor-trifi {
@@ -120,6 +124,11 @@ body > .footer > .top .time .title, .box .box_word .upper p, .box .box_word .tit
 .sponsor-gomaji {
   width: 90px;
   height: 27px;
+}
+
+.sponsor-tlc {
+  width: 49px;
+  height: 32px;
 }
 
 a:hover, a:active, a:focus, button:hover, button:active, button:focus {
