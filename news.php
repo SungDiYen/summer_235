@@ -247,10 +247,11 @@ $NData  = $g_db->getRow($sqlstr);
 		</div>
 	</footer>
 	<div class="news_popup">
+		<div class="popup_escape"></div>
 		<div class="popup-box">
 		<!--AJAX帶入資訊-->
 			<h4 class="popup_title"><?=$NData['news_title']?></h4>
-			<p class="popup_para"><?=$NData['news_content']?></p>
+			<div class="popup_para"><?=$NData['news_content']?></div>
 			<div class="close-btn"></div>
 		</div>
 	</div>

@@ -133,18 +133,24 @@ main {
 	//overflow-y: auto;
 	&.active {
 		z-index: 999;
-		background: rgba(#000, .3);
+		//background: rgba(#000, .3);
 		opacity: 1;
 		top: 0;
 	}
 	.popup-box {
 		background: #fff;
-		position: relative;
+		//position: relative;
+		position: absolute;
+		z-index: 9;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		@include border-radius(3px);
 		@include box-shadow(1px 0px 7px 2px #666);
 		padding: 20px 30px;
-		margin: 0 auto;
-		margin-top: 20%;
+		//margin: 0 auto;
 		width: 50%;
 		height: 60%;
 		overflow: scroll;
@@ -169,10 +175,20 @@ main {
 			@extend %page_para;
 			font-size: rem(15);
 			color: rgba($text-bk,.8);
+			//overflow: scroll;
+			//height: 90%;
 		}
+	}
+	.popup_escape {
+		width:  100%;
+		height: 100%;
+		background: rgba(#000, .3);
+		position: fixed;
+		z-index: 1;
 	}
 	.close-btn {
 		position: absolute;
+		z-index: 10;
 		right: 20px;
 		top: 10px;
 		cursor: pointer;
