@@ -1,3 +1,36 @@
+<?php
+include("config.php");
+
+//分頁設定
+$_PageShowNum   = 10;                               //每頁預設顯示數量
+$_PageNoShowNum = 10;                               //每頁預設顯示項目數量
+
+$PageNO = (isset($_GET['pageno']) && $_GET['pageno'] > 0) ? (int)$_GET['pageno'] : 0;
+//查詢
+$month = (isset($_GET['month']) && intval($_GET['month']) > 0) ? $_GET['month'] : date("Y-m");
+
+$WhereStr = " and DATE_FORMAT(news_date,'%Y-%m')='".$month."' ";
+//資料
+$NowDate  = date("Y-m-d");
+	
+$OrderStr = "news_date desc,";
+
+$sqlstr = "select * from ".Table_News." where DelFlag='' and show_status='Y'  and news_date <='".date("Y-m-d")."' ".$WhereStr;
+$DataSum = $g_db->numRows($g_db->query($sqlstr));
+$startuprow = $PageNO * $_PageShowNum;
+$sqlstr .= " ORDER BY ".$OrderStr."`news_id` desc LIMIT ".$startuprow.",".$_PageShowNum;
+$NewsList   = $g_db->getAll($sqlstr);
+//分頁列表
+$Pageshow = new PageShow($DataSum, $_PageShowNum, $PageNO, "news.php?month=".$month);
+
+$Pageshow->TotalPage(5);
+$PageStr = $Pageshow->PageList('MORE_WEB');
+
+//資料
+$nid = intval($_GET['nid']);
+$sqlstr = "select * from ".Table_News." where  DelFlag='' and show_status='Y'  and news_date <='".date("Y-m-d")."' and news_id='".$nid."'";
+$NData  = $g_db->getRow($sqlstr);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +42,11 @@
 	<meta property="og:image" content="content">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>臺灣夏至235</title>
-	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../css/about.css">
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/news.css">
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,18 +73,18 @@
 					</button>
 					-->
 					<a class="navbar-brand logo" href="http://www.taiwan235n.tw/">
-						<img src="../images/logo_top_left.png" alt="臺灣夏至235">
+						<img src="images/logo_top_left.png" alt="臺灣夏至235">
 					</a>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="http://www.taiwan235n.tw/pages/about.html">
+							<a href="/pages/about.html">
 								<span class="en">ABOUT</span>關於臺灣夏至235
 							</a>
 						</li>
 						<li>
-							<a href="../news.php" >
+							<a href="news.php" >
 								<span class="en">NEWS</span>焦點新聞
 							</a>
 						</li>
@@ -82,68 +115,55 @@
 		</nav>
 		<div class="header_below"></div>
 	</header>
-	<!---->
 	<main class="container">
+		<div class="row">
+			<div class="page_title col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+				<h1>NEWS 最新消息</h1>
+			</div>
+		</div>
 		<article class="row">
-			<!--<section class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-off-2 col-xs-10 col-xs-offset-1">-->
-			<section class="box">
-				<h1 class="title">關於臺灣夏至235</h1>
-				<h2 class="title-sub">臺灣夏至235就是臺灣的夏日限定！</h2>
-				<!--<div class="gallery clearfix">
-					<div class="pics lg-1">
-						<figure class="pic">
-							<img src="../images/about/info_01.jpg" alt="">
-						</figure>
-					</div>
-					<div class="pics sm-4">
-						<figure class="pic">
-							<img src="../images/about/i_06.jpg" alt="">
-						</figure>
-						<figure class="pic">
-							<img src="../images/about/i_02.jpg" alt="">
-						</figure>
-						<figure class="pic">
-							<img src="../images/about/i_05.jpg" alt="">
-						</figure>
-						<div class="pic figcaption">
+			<div class="monthly col-lg-1 col-md-1 col-sm-1 col-xs-1 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
+				<h6 class="title">月份</h6>
+				<ul class="monthly_tabs">
+                    <?
+                    for($i = intval(date('m')) ; $i >=5 ; $i--){
+						echo '<li class="tab '.($month==(date("Y").'-'.str_pad($i,2,0,STR_PAD_LEFT)) ? "active" : "").'" onclick="location.href=\'news.php?month='.(date("Y").'-'.str_pad($i,2,0,STR_PAD_LEFT)).'\'">'.$i.'月</li>';
+					}
+					?>
+					
+				</ul>
+			</div>
+			<div class="news-container col-lg-9 col-md-9 col-sm-9 col-xs-9">
+			<!--顯示最新10則-->
+            	<?php
+				foreach($NewsList as $key => $val){
+					$NewsPic = (file_exists(Upload_Path."news/".$val['news_pic']) && $val['news_pic']!='') ? Upload_Url."news/".$val['news_pic'] : ""; 
+					
+					echo '<section class="news_box clearfix" data-nid="'.$val['news_id'].'">
 							<div class="wrap">
-								<span>澎湖</span>
-								<span>嘉義 - 北回歸線太陽館</span>	
-								<span>小門</span>
+								<time class="time">'.$val['news_date'].'</time>
+								<h4 class="title">'.$val['news_title'].'</h4>
+								<h6 class="capture">'.utf8_substr(strip_tags($val['news_content']),0,200).'</h6>
 							</div>
-						</div>
-					</div>
-				</div>-->
-				<div class="wrap clearfix">
-					<div class="para left">
-						<p>
-							北緯23度半的北回歸線橫亙臺灣本島至離島，北回歸線也是太陽轉身的地方，夏至是全年日照最長的一天，交通部觀光局結合地理空間與節氣時間概念，打造出專屬於臺灣的夏日節慶，只要是北回歸線途經臺灣的地區，加上夏日限定的食、遊、藝、樂，都是構成臺灣夏至235的重要元素喔！
-						</p>
-						<p>
-							今年夏天請您一起跟隨我們的腳步，從花東縱谷橫越阿里山到西拉雅，再從東石漁人碼頭出海到澎湖，一路向西吃遍臺灣夏至235各地美食！讓熱愛臺灣的遊客更有感的體驗這一條看不見的北回歸線，感受濃厚的臺灣人情與豐富的夏日節慶，今年就與我們一起臺灣夏至235，一同Fun一夏！
-						</p>
-					</div>
-					<figure class="pic left">
-						<img src="../images/about/info_01.jpg" alt="">
-					</figure>
-				</div>
-				<figure class="pics">
-					<img src="../images/about/i_02.jpg" alt="">
-					<img src="../images/about/i_03.jpg" alt="">
-					<img src="../images/about/i_04.jpg" alt="">
-					<img src="../images/about/i_05.jpg" alt="">
-					<img src="../images/about/i_06.jpg" alt="">
-				</figure>
-			</section>
+							<figure class="thumbnail">
+								'.(!empty($NewsPic) ? '<img src="'.$NewsPic.'" alt="">' : "").'
+							</figure>
+						</section>';
+				}
+				?>
+				
+				<nav>
+					<?php echo $PageStr;?>
+				</nav>
+			</div>
 		</article>
 	</main>
-	<!---->
 	<footer class="footer">
 		<div class="top container-fluid">
 			<div class="row">
 				<div class="logo col-lg-2 col-lg-offset-3 col-md-offset-3  col-md-2 col-sm-2 col-sm-offset-3 col-xs-2 col-xs-offset-3">
 					<figure class="footer_bear">
-						<img src="../images/footer_bear.png" alt="">
+						<img src="images/footer_bear.png" alt="臺灣夏至235">
 					</figure>
 				</div>
 				<section class="time col-lg-6  col-md-6 col-sm-6 col-xs-6">
@@ -208,7 +228,7 @@
 									<a href="http://www.bestradio.com.tw" target="_blank" role="好事聯播網"><div class="sponsor-bestRadio"></div></a>
 									<a href="http://www.gomaji.com/Taipei" target="_blank" role="夠麻吉"><div class="sponsor-gomaji"></div></a>
 									<a href="http://www.kuos.com" target="_blank" role="郭元益"><div class="sponsor-kuos"></div></a>
-									<a href="https://www.americanexpress.com/taiwan" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
+									<a href="http://offers.amexnetwork.com/ilp?campaignID=Cam-0000537" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
 									<a href="https://www.facebook.com/Foduaiyu2012" target="_blank" role="佛都愛玉"><div class="sponsor-bu"></div></a>
 								</div>
 							</div>
@@ -226,24 +246,26 @@
 			</div>
 		</div>
 	</footer>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">活動尚未開跑  敬請期待</h4>
-		      </div>
-		      <!--<div class="modal-body">
-		        敬請期待
-		      </div>-->
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-		        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-		      </div>
-		    </div>
-		  </div>
+	<div class="news_popup">
+		<div class="popup-box">
+		<!--AJAX帶入資訊-->
+			<h4 class="popup_title"><?=$NData['news_title']?></h4>
+			<p class="popup_para"><?=$NData['news_content']?></p>
+			<div class="close-btn"></div>
+		</div>
 	</div>
 </body>
-<script src="../node_modules/slick/slick/slick.js"></script>
-<script src="../js/layout.js"></script>
-<script src="../js/index.js"></script>
+<script src="node_modules/slick/slick/slick.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/news.js"></script>
+<script>
+$(document).ready(function(e) {
+<?
+if($nid > 0){
+	echo "$('body').addClass('body-lock');
+	$('.news_popup').addClass('active');";
+}
+?>
+});
+</script>
+</html>

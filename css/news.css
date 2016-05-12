@@ -18,8 +18,8 @@ body > .footer > .top .time .title, main .page_title, main .monthly > .title, ma
 	font-family: PingFangTC-Medium, sans-serif;
 	font-family: PingFangTC-Semibold, sans-serif;
  */
-.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-trifi, .sponsor-uni {
-  background-image: url('../images/sponsor-s45e764532a.png');
+.sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-tlc, .sponsor-trifi, .sponsor-uni {
+  background-image: url('../images/sponsor-s455fcca02f.png');
   background-repeat: no-repeat;
 }
 
@@ -59,12 +59,16 @@ body > .footer > .top .time .title, main .page_title, main .monthly > .title, ma
   background-position: 0 -381px;
 }
 
-.sponsor-trifi {
+.sponsor-tlc {
   background-position: 0 -415px;
 }
 
+.sponsor-trifi {
+  background-position: 0 -467px;
+}
+
 .sponsor-uni {
-  background-position: 0 -459px;
+  background-position: 0 -511px;
 }
 
 .sponsor-trifi {
@@ -120,6 +124,11 @@ body > .footer > .top .time .title, main .page_title, main .monthly > .title, ma
 .sponsor-gomaji {
   width: 90px;
   height: 27px;
+}
+
+.sponsor-tlc {
+  width: 49px;
+  height: 32px;
 }
 
 main .page_title {
@@ -556,13 +565,15 @@ main .news-container .news_box:hover .time, main .news-container .news_box:hover
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 1px 1px 1px 1px, #000;
-  -webkit-box-shadow: 1px 1px 1px 1px, #000;
-  box-shadow: 1px 1px 1px 1px, #000;
+  -moz-box-shadow: 1px 0px 7px 2px #666;
+  -webkit-box-shadow: 1px 0px 7px 2px #666;
+  box-shadow: 1px 0px 7px 2px #666;
   padding: 20px 30px;
   margin: 0 auto;
   margin-top: 20%;
   width: 50%;
+  height: 60%;
+  overflow: scroll;
 }
 @media only screen and (max-width: 768px) {
   .news_popup .popup-box {
@@ -573,6 +584,7 @@ main .news-container .news_box:hover .time, main .news-container .news_box:hover
   margin: 0;
   padding-bottom: 10px;
   border-bottom: 1px solid #bbb;
+  margin-top: 10px;
   margin-bottom: 10px;
   color: #0c1318;
 }

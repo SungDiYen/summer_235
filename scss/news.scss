@@ -141,11 +141,13 @@ main {
 		background: #fff;
 		position: relative;
 		@include border-radius(3px);
-		@include box-shadow(1px 1px 1px 1px, #000);
+		@include box-shadow(1px 0px 7px 2px #666);
 		padding: 20px 30px;
 		margin: 0 auto;
 		margin-top: 20%;
 		width: 50%;
+		height: 60%;
+		overflow: scroll;
 		@include screen(sm) {
 			width: 100%;
 		}
@@ -158,6 +160,7 @@ main {
 			margin: 0;
 			padding-bottom: 10px;
 			border-bottom: 1px solid $grey;
+			margin-top: 10px;
 			margin-bottom: 10px;
 			color: $text-bk;
 		}

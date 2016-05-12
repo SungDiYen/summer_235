@@ -1,3 +1,15 @@
+<?php
+include("config.php");
+
+//資料
+$NowDate  = date("Y-m-d");
+	
+$OrderStr = "news_date desc,";
+
+$sqlstr = "select * from ".Table_News." where DelFlag='' and show_status='Y'  and news_date <='".date("Y-m-d")."' ".$WhereStr;
+$sqlstr .= " ORDER BY ".$OrderStr."`news_id` desc LIMIT 0,1";  //取1筆，如果增減改1那個數字
+$NewsList   = $g_db->getAll($sqlstr);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +21,11 @@
 	<meta property="og:image" content="content">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>臺灣夏至235</title>
-	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../css/about.css">
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,7 +52,7 @@
 					</button>
 					-->
 					<a class="navbar-brand logo" href="http://www.taiwan235n.tw/">
-						<img src="../images/logo_top_left.png" alt="臺灣夏至235">
+						<img src="images/logo_top_left.png" alt="臺灣夏至235">
 					</a>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
@@ -51,7 +63,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="../news.php" >
+							<a href="news.php">
 								<span class="en">NEWS</span>焦點新聞
 							</a>
 						</li>
@@ -80,70 +92,164 @@
 				</div>
 			</div>
 		</nav>
-		<div class="header_below"></div>
 	</header>
-	<!---->
-	<main class="container">
-		<article class="row">
-			<!--<section class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-off-2 col-xs-10 col-xs-offset-1">-->
-			<section class="box">
-				<h1 class="title">關於臺灣夏至235</h1>
-				<h2 class="title-sub">臺灣夏至235就是臺灣的夏日限定！</h2>
-				<!--<div class="gallery clearfix">
-					<div class="pics lg-1">
-						<figure class="pic">
-							<img src="../images/about/info_01.jpg" alt="">
-						</figure>
+	<main class="">
+		<article class="container-fluid">
+			<section class="row upper">
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 box">
+					<div class="box_img slider">
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" width="560" height="315" frameborder="0" allowfullscreen
+									src="https://www.youtube.com/embed/NRaIKd9OXN0?
+									autoplay=1&
+									playlist=NRaIKd9OXN0&
+									loop=1" ></iframe>
+						</div>
+						<!--
+						<img src="images/hero_1120 x 630-01.jpg" alt="">
+						<img src="images/hero_1120 x 630-02.jpg" alt="">
+						<img src="images/hero_1120 x 630-03.jpg" alt="">
+						-->
 					</div>
-					<div class="pics sm-4">
-						<figure class="pic">
-							<img src="../images/about/i_06.jpg" alt="">
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 box normal">
+					<a href="#" data-toggle="modal" data-target="#myModal">
+						<figure class="box_img dot_patten">
+							<img src="images/IMG_7468.JPG" alt="大口吃遍臺灣夏至235">
 						</figure>
-						<figure class="pic">
-							<img src="../images/about/i_02.jpg" alt="">
-						</figure>
-						<figure class="pic">
-							<img src="../images/about/i_05.jpg" alt="">
-						</figure>
-						<div class="pic figcaption">
-							<div class="wrap">
-								<span>澎湖</span>
-								<span>嘉義 - 北回歸線太陽館</span>	
-								<span>小門</span>
+						<div class="box_word">
+							<div class="upper">
+								<p>請你跟我這樣做</p>
+							</div>
+							<div class="title">
+								<h3>大口吃遍臺灣夏至235</h3>
 							</div>
 						</div>
+					</a>
+					<div class="logo center">
+						<img src="images/logo_center.png" alt="臺灣夏至235">
 					</div>
-				</div>-->
-				<div class="wrap clearfix">
-					<div class="para left">
-						<p>
-							北緯23度半的北回歸線橫亙臺灣本島至離島，北回歸線也是太陽轉身的地方，夏至是全年日照最長的一天，交通部觀光局結合地理空間與節氣時間概念，打造出專屬於臺灣的夏日節慶，只要是北回歸線途經臺灣的地區，加上夏日限定的食、遊、藝、樂，都是構成臺灣夏至235的重要元素喔！
-						</p>
-						<p>
-							今年夏天請您一起跟隨我們的腳步，從花東縱谷橫越阿里山到西拉雅，再從東石漁人碼頭出海到澎湖，一路向西吃遍臺灣夏至235各地美食！讓熱愛臺灣的遊客更有感的體驗這一條看不見的北回歸線，感受濃厚的臺灣人情與豐富的夏日節慶，今年就與我們一起臺灣夏至235，一同Fun一夏！
-						</p>
-					</div>
-					<figure class="pic left">
-						<img src="../images/about/info_01.jpg" alt="">
-					</figure>
 				</div>
-				<figure class="pics">
-					<img src="../images/about/i_02.jpg" alt="">
-					<img src="../images/about/i_03.jpg" alt="">
-					<img src="../images/about/i_04.jpg" alt="">
-					<img src="../images/about/i_05.jpg" alt="">
-					<img src="../images/about/i_06.jpg" alt="">
-				</figure>
+			</section>
+			<section class="row lower">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box normal">
+					<a href="#" data-toggle="modal" data-target="#myModal">
+						<figure class="box_img dot_patten">
+							<img src="images/3_box.jpg" alt="拯救夏至村">
+						</figure>
+						<div class="box_word">
+							<div class="upper">
+								<p>出冰吧！</p>
+							</div>
+							<div class="title">
+								<h3>拯救夏至村</h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box normal">
+					<a href="http://www.taiwan235n.tw/moving/rules.html">
+						<figure class="box_img dot_patten dark">
+							<img src="images/IMG_8099.jpg" class=""alt="嘿！會動的夏至！">
+						</figure>
+						<div class="box_word">
+							<div class="upper">
+								<p>夏至主題活動</p>
+							</div>
+							<div class="title">
+								<h3>嘿！會動的夏至！</h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box normal">
+					<a href="http://www.taiwan235n.tw/event.html">
+						<figure class="box_img dot_patten">
+							<img src="images/5_box.jpg" alt="主題活動">
+						</figure>
+						<div class="box_word">
+							<div class="upper">
+								<p>夏至限定</p>
+							</div>
+							<div class="title">
+								<h3>主題活動</h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<!--<div class="col-lg-3 box goodies">
+					<a href="#">
+						<i class="icon"><img src="images/ticket_icon.png" alt=""></i>
+						<div class="cfa">夏至限定好康等你拿</div>
+					</a>
+				</div>
+				<div class="col-lg-3 box news">
+					<div class="title">
+						<h3>
+							<span class="en">NEWS</span>
+							焦點新聞
+						</h3>
+					</div>
+					<div class="content">
+						<ul class="list-group">
+                            <?php
+							foreach($NewsList as $key => $val){
+								
+								echo '<li class="list-group-item">
+										  <a href="news.php?nid='.$val['news_id'].'">
+											  <span class="date">'.date('m.d',strtotime($val['news_date'])).'</span>
+											  '.$val['news_title'].'
+										  </a>
+									  </li>';
+							}
+							?>
+							
+						</ul>
+					</div>
+					<a href="news.php" class="btn more">more</a>
+				</div>-->
+				<div class="col-lg-3  col-md-3 col-sm-3 box fourth">
+					<div class="goodies">
+						<a href="#" data-toggle="modal" data-target="#myModal">
+							<i class="fa fa-ticket icon" aria-hidden="true"></i>
+							<div class="cfa">夏至限定好康等你拿</div>
+						</a>
+					</div>
+					<div class="news">
+						<div class="title">
+							<h3>
+								<span class="en">NEWS</span>
+								焦點新聞
+							</h3>
+						</div>
+						<div class="content">
+							<ul class="list-group">
+                            	<?php
+								foreach($NewsList as $key => $val){
+									
+									echo '<li class="list-group-item">
+											  <a href="news.php?nid='.$val['news_id'].'">
+												  <span class="date">'.date('m.d',strtotime($val['news_date'])).'</span>
+												  '.$val['news_title'].'
+											  </a>
+										  </li>';
+								}
+								?>
+								
+							</ul>
+						</div>
+						<a href="news.php" class="btn more" >more</a>
+					</div>
+				</div>
 			</section>
 		</article>
 	</main>
-	<!---->
 	<footer class="footer">
 		<div class="top container-fluid">
 			<div class="row">
 				<div class="logo col-lg-2 col-lg-offset-3 col-md-offset-3  col-md-2 col-sm-2 col-sm-offset-3 col-xs-2 col-xs-offset-3">
 					<figure class="footer_bear">
-						<img src="../images/footer_bear.png" alt="">
+						<img src="images/footer_bear.png" alt="臺灣夏至235">
 					</figure>
 				</div>
 				<section class="time col-lg-6  col-md-6 col-sm-6 col-xs-6">
@@ -208,7 +314,7 @@
 									<a href="http://www.bestradio.com.tw" target="_blank" role="好事聯播網"><div class="sponsor-bestRadio"></div></a>
 									<a href="http://www.gomaji.com/Taipei" target="_blank" role="夠麻吉"><div class="sponsor-gomaji"></div></a>
 									<a href="http://www.kuos.com" target="_blank" role="郭元益"><div class="sponsor-kuos"></div></a>
-									<a href="https://www.americanexpress.com/taiwan" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
+									<a href="http://offers.amexnetwork.com/ilp?campaignID=Cam-0000537" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
 									<a href="https://www.facebook.com/Foduaiyu2012" target="_blank" role="佛都愛玉"><div class="sponsor-bu"></div></a>
 								</div>
 							</div>
@@ -238,12 +344,12 @@
 		      </div>-->
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-		        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
 		      </div>
 		    </div>
 		  </div>
 	</div>
 </body>
-<script src="../node_modules/slick/slick/slick.js"></script>
-<script src="../js/layout.js"></script>
-<script src="../js/index.js"></script>
+<script src="node_modules/slick/slick/slick.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/index.js"></script>
+</html>
