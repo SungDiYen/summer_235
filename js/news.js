@@ -19,7 +19,7 @@ $('.news_box').click(function(event) {
 
 
 });
-$('.close-btn').click(function(event) {
+$('.close-btn, .popup_escape').click(function(event) {
 		$('.news_popup').removeClass('active');
 		$('body').removeClass('body-lock');
 });
