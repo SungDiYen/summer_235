@@ -2,7 +2,7 @@
 		"basic/_var.scss", 
 		"basic/_mixin.scss",
 		"basic/_sprites.scss",
-		"module/_style.scss";
+		"_global.scss";
 
 $screen-sm: 768px;
 $screen-md: 992px;
@@ -57,6 +57,9 @@ body > .header {
 				padding: 0;
 				position: relative;
 				z-index: 99;
+				>img {
+					max-width: 250px;
+				}
 			}
 		}
 	}

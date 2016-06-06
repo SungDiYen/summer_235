@@ -60,7 +60,23 @@ $(function(){
             items.push( val );
         });
         var PVs = items[10];
-		$("#pvs").append(PVs)
+		$("#pvs").append(PVs);
+		 console.log(PVs);
     });
     */
+});
+$(document).ready(function(e) {
+    
+	$.ajax({
+		  type:"POST",
+		  url:"http://www.taiwan235n.tw/web_counter.php",
+		  dataType:"html",
+		  success:function(ret){
+			$(".counter").html(ret); 
+		  },
+		  error:function(xhr){
+			
+			
+		 }		
+	  });
 });

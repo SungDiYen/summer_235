@@ -1,0 +1,56 @@
+$sponsor-spacing: 20px;
+$sponsor-dimensions: true;
+//$sponsor-layout: horizontal;
+@import "sponsor/*.png";
+@include all-sponsor-sprites;
+
+//linkToClass(.folderName-imgName)
+.sponsor-trifi {
+	width: image-width('sponsor/trifi.png');
+	height: image-height('sponsor/trifi.png');
+}
+.sponsor-MOTC {
+	width: image-width('sponsor/MOTC.png');
+	height: image-height('sponsor/MOTC.png');
+}
+.sponsor-uni {
+	width: image-width('sponsor/uni.png');
+	height: image-height('sponsor/uni.png');
+}
+//////
+.sponsor-familyM {
+	width: image-width('sponsor/familyM.png');
+	height: image-height('sponsor/familyM.png');
+}
+.sponsor-sony {
+	width: image-width('sponsor/sony.png');
+	height: image-height('sponsor/sony.png');
+}
+.sponsor-kingyo {
+	width: image-width('sponsor/kingyo.png');
+	height: image-height('sponsor/kingyo.png');
+}
+.sponsor-kuos {
+	width: image-width('sponsor/kuos.png');
+	height: image-height('sponsor/kuos.png');
+}
+.sponsor-AE {
+	width: image-width('sponsor/AE.png');
+	height: image-height('sponsor/AE.png');
+}
+.sponsor-bestRadio {
+	width: image-width('sponsor/bestRadio.png');
+	height: image-height('sponsor/bestRadio.png');
+}
+.sponsor-bu {
+	width: image-width('sponsor/bu.png');
+	height: image-height('sponsor/bu.png');
+}
+.sponsor-gomaji {
+	width: image-width('sponsor/gomaji.png');
+	height: image-height('sponsor/gomaji.png');
+}
+.sponsor-tlc {
+	width: image-width('sponsor/tlc.png');
+	height: image-height('sponsor/tlc.png');
+}

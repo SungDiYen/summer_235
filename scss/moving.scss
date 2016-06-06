@@ -463,10 +463,18 @@ main.container {
 					}
 				}
 				.intro {
-					padding: 15px 10px;
+					margin: 15px 10px;
+					padding-top: 15px;
 					border-top: 1px solid rgba($text-bk-light,.4);
 					line-height: 1.5;
 					color: $text-bk-light;
+
+					display: -webkit-box;
+					display: -moz-box;
+				    -webkit-line-clamp: 3;
+				    -webkit-box-orient: vertical;
+				    overflow: hidden;
+				    min-height: 80px;
 				}
 			}
 		}

@@ -1,0 +1,273 @@
+@import "compass",
+		"basic/_var.scss", 
+		"basic/_mixin.scss",
+		"basic/_sprites.scss",
+		"module/_style.scss";
+
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1441px;
+
+@mixin screen($size) {
+	@if $size == sm {
+		@media only screen and (max-width: $screen-sm){
+			@content;
+		}
+	}
+	@else if $size == md {
+   		@media only screen and (min-width: $screen-sm + 1) and (max-width: $screen-lg - 1) { @content; }
+	}
+	@else if $size == lg {
+		@media only screen and (min-width: $screen-lg + 1) and (max-width: $screen-xl - 1) { @content; }
+	}
+	@else if $size == xl {
+		@media only screen and (min-width: $screen-xl) { @content; }
+	}
+}
+
+//////
+a, button {
+	&:hover , &:active, &:focus {
+		text-decoration: none;
+		outline: none;
+	}
+}
+//////
+body {
+	min-width: 1366px;
+}
+body > .header {
+	background: rgba($og, .8);
+	.header_below {
+		height: 300px;
+		margin: 0 -15px;
+		@include background(image-url("inner_header_bg.jpg"));
+		@include background-size(contain);
+	}
+	>nav.navbar {
+		border: 0;
+		margin: 0;
+		>.row {
+			@include display-flex;
+		}
+		.navbar-header {
+			padding: 0;
+			.navbar-brand {
+				padding: 0;
+				position: relative;
+				z-index: 99;
+			}
+		}
+	}
+	.list {
+		li {
+			@include screen(sm) {
+				float: left;
+			}
+			@include screen(md) {
+				float: left;
+			}
+			a {
+				font-size: rem(18);
+				//font-weight: 600;
+				font-weight: 300;
+				letter-spacing: 2px;
+				color: $text-bk;
+				padding: 10px 45px;
+				.en {
+					display: block;
+					font-size: rem(14);
+					line-height: 1.8;
+					font-weight: 400;
+					letter-spacing: 1px;
+					color: $text-wt;
+					text-align: center;
+				}
+				&:hover, &:focus {
+					background: $og;
+					color: $text-wt;
+				}
+				@include screen(lg) {
+					font-size: rem(18);
+					&.en {
+						font-size: rem(12);
+					}
+				}
+				@include screen(md) {
+					font-size: rem(18);
+					&.en {
+						font-size: rem(12);
+					}
+				}
+				@include screen(sm) {
+					font-size: rem(18);
+					&.en {
+						font-size: rem(12);
+					}
+				}
+			}
+		}
+	}
+	.lang {
+		@include display-flex;
+		@include justify-content(center);
+		>.nav {
+			@include display-flex;
+			li {
+				color: $og-dark;
+				font-size: rem(16);
+				font-weight: 900;
+				align-self: center;
+				width:  30px;
+				height: 30px;
+				@include border-radius(50px);
+				text-align: center;
+				padding: 2px;
+				margin: 0 4px;
+				cursor: pointer;
+				border: 1px solid rgba($wt, 0);
+				@include transition(all .2s ease-in);
+				&.en {
+					font-weight: 400;
+					font-size: rem(14);
+					line-height: 1.45;
+					position: relative;
+					top: 2px;
+				}
+				&.active {
+					color: $og;
+					background: $wt;
+					&:hover {
+						color: $og;
+					}
+				}
+				&:hover {
+					border: 1px solid $wt;
+					color: $wt;
+				}
+			}
+		}
+	}
+}
+body >.footer {
+	>.top {
+		background: $og-light;
+		padding-top: 20px;
+		.time {
+			position: relative;
+			bottom: 0px;
+			@include screen(xl) {
+				bottom: -60px;
+			}
+			.title {
+				font-size: rem(24);
+				color: $text-og;
+				margin: 0 20px 10px 0;
+				@extend %ff-title;
+			}
+			.time_content {
+				.unit {
+					border: 3px solid rgba($og, .9);
+					@include border-radius(10px);
+					display: inline-block;
+					//height: 140px;
+					//width:  140px;
+					padding: 6px 26px;
+					color: $og;
+					font-family: "Corbel";
+					@include display-flex(inline-flex);
+					@include justify-content(center);
+					@include align-items(center);
+					text-align: center;
+					margin-right: 40px;
+					h6 {
+						font-size: rem(64);
+						opacity: .9;
+						font-weight: bold;
+						font-style: italic;
+						margin: 0;
+					}
+					p {
+						font-size: rem(18);
+						font-weight: 600;
+						padding-top: 5px;
+					}
+				}
+			}
+		}
+		.footer_bear {
+			img {
+				width: 100%;
+			}
+		}
+		.sponsor {
+			margin: 20px 0;
+			.upper {
+				@include display-flex;
+				@include justify-content(center);
+				margin-bottom: 10px;
+				.sponsor_unit {
+					//margin-right: 60px;
+					margin-right: 60px;
+					@include screen(lg) {
+						margin-right: 20px;
+					}
+				}
+			}
+			.lower {
+				@include display-flex;
+				@include justify-content(center);
+			}
+			.sponsor_unit {
+				@include display-flex;
+				@include align-items(center);
+				>.title {
+					display: inline-block;
+					color: #636363;
+					margin-right: 12px;
+					font-size: rem(13);
+				}
+				>.content {
+					@include display-flex;
+					@include align-items(center);
+					div[class^="sponsor"] {
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+		.counter {
+			@include display-flex;
+			@include align-items(center);
+			background: $og;
+			@include border-radius(8px);
+			padding: 3px 30px;
+			margin-left: 20px;
+			>.title {
+				margin-right: 20px;
+				color: $wt;
+			}
+			>.content {
+				font-size: rem(26);
+				color: $wt;
+			}
+		}
+	}
+	>.bottom {
+		background: $og;
+		color: $text-wt;
+		font-size: rem(13);
+		.copy {
+			text-align: center;
+			margin-top: 16px;
+			margin-bottom: 16px;
+		}
+		p {
+			margin: 0;
+			&:first-of-type {
+				margin-bottom: 4px;
+			}
+		}
+	}
+}

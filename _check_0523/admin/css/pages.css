@@ -1,0 +1,87 @@
+.pages {
+	border-top: dashed 1px #dfdfdf;
+	margin-top: 30px;
+	padding: 15px 5px;
+}
+
+.pages ul{
+	overflow: hidden;
+	float: right;
+
+}
+.pages ul li{
+	padding-left: 5px;
+	float: left;
+}
+.pages ul li a{
+	display: block;
+	border: 1px solid #dfdfdf;
+	color: #a5a5a5;
+	font-family: Verdana, Geneva, sans-serif, "微軟正黑體";
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	font-size: 13px;
+}
+.pages ul li a:hover{
+	color: #e3b315;
+	background-color: #FFF;
+	text-decoration: none;
+	border: solid 1px #e3b315;
+}
+.pages ul li.pre a{
+	width: auto;
+	padding: 0 5px 0 15px;
+	background-image: url(../images/pageicon_pre.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	border: none;
+	height: 24px;
+	line-height: 24px;
+}
+.pages ul .pre a:hover {
+	color: #e3b315;
+	background-image: url(../images/pageicon_pre_hover.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.pages ul li.next a{
+	width: auto;
+	padding: 0 15px 0 5px;
+	background-image: url(../images/pageicon_next.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+	border: none;
+	height: 24px;
+	line-height: 24px;
+}
+.pages ul li.next a:hover {
+	color: #e3b315;
+	background-image: url(../images/pageicon_next_hover.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.pages .here {
+	color: #e3b315;
+	background-color: #FFF;
+	text-decoration: none;
+	border: solid 1px #e3b315;
+}
+.pages_quick {
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	color: #737373;
+	text-align: right;
+	padding-top: 15px;
+	clear: both;
+}
+
+.pages_check {
+	border: 1px solid #dfdfdf;
+	padding: 2px 10px;
+	background-color: #333;
+	color: #CCC;
+}

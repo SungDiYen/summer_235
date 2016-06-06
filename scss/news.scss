@@ -102,6 +102,7 @@ main {
 				.capture {
 					color: $bk;
 					@include ellipsis;
+					display: none;	
 				}
 			}
 			.thumbnail {
@@ -175,6 +176,7 @@ main {
 			@extend %page_para;
 			font-size: rem(15);
 			color: rgba($text-bk,.8);
+			color: $text-bk;
 			//overflow: scroll;
 			//height: 90%;
 		}

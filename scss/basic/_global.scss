@@ -1,0 +1,69 @@
+@import "_layout.scss";
+
+
+
+%page_title {
+	font-size: rem(32);
+	font-weight: 400;
+	color: $og;
+}
+%page_title-sub {
+	font-size: rem(21);
+	font-weight: 400;
+	color: $og;
+}
+%page_content {
+	font-size: rem(15.5);
+	font-weight: 300;
+	color: $bk;
+	line-height: 1.8;
+}
+%page_para {
+	font-size: rem(15.5);
+	font-weight: 300;
+	color: $bk;
+	line-height: 1.8;
+}
+////////
+///
+%container_layout {
+	margin-top:    60px;
+	margin-bottom: 40px;
+}
+
+/*----------
+	element
+----------*/
+.pagination {
+	@include display-flex;
+	@include justify-content(center);
+	li {
+		&:first-child, &:last-child {
+			a {
+				border: 0;
+				&:hover {
+					background: transparent;
+					color: $og;
+				}
+			}
+		}
+		a {
+			@include border-radius(50%);
+			margin: 0 5px;
+			color: #bababa;
+			border: 1px solid #bababa;
+			@include transition(all .28s ease-in);
+			&:hover {
+				background: $og;
+				color: #fff;
+			}
+			&.active {
+				border: 1px solid $og;
+				color: $og;
+				&:hover{
+					color: #fff;
+				}
+			}
+		}
+	}
+}

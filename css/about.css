@@ -19,7 +19,7 @@ body > .footer > .top .time .title {
 	font-family: PingFangTC-Semibold, sans-serif;
  */
 .sponsor-sprite, .sponsor-AE, .sponsor-MOTC, .sponsor-bestRadio, .sponsor-bu, .sponsor-familyM, .sponsor-gomaji, .sponsor-kingyo, .sponsor-kuos, .sponsor-sony, .sponsor-tlc, .sponsor-trifi, .sponsor-uni {
-  background-image: url('../images/sponsor-s455fcca02f.png');
+  background-image: url('../images/sponsor-sed1070a036.png');
   background-repeat: no-repeat;
 }
 
@@ -60,15 +60,15 @@ body > .footer > .top .time .title {
 }
 
 .sponsor-tlc {
-  background-position: 0 -415px;
+  background-position: 0 -430px;
 }
 
 .sponsor-trifi {
-  background-position: 0 -467px;
+  background-position: 0 -482px;
 }
 
 .sponsor-uni {
-  background-position: 0 -511px;
+  background-position: 0 -526px;
 }
 
 .sponsor-trifi {
@@ -92,8 +92,8 @@ body > .footer > .top .time .title {
 }
 
 .sponsor-sony {
-  width: 81px;
-  height: 14px;
+  width: 105px;
+  height: 29px;
 }
 
 .sponsor-kingyo {
@@ -155,6 +155,46 @@ main.container {
   margin-bottom: 40px;
 }
 
+/*----------
+	element
+----------*/
+.pagination {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.pagination li:first-child a, .pagination li:last-child a {
+  border: 0;
+}
+.pagination li:first-child a:hover, .pagination li:last-child a:hover {
+  background: transparent;
+  color: #ffa800;
+}
+.pagination li a {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 5px;
+  color: #bababa;
+  border: 1px solid #bababa;
+  -moz-transition: all 0.28s ease-in;
+  -o-transition: all 0.28s ease-in;
+  -webkit-transition: all 0.28s ease-in;
+  transition: all 0.28s ease-in;
+}
+.pagination li a:hover {
+  background: #ffa800;
+  color: #fff;
+}
+.pagination li a.active {
+  border: 1px solid #ffa800;
+  color: #ffa800;
+}
+.pagination li a.active:hover {
+  color: #fff;
+}
+
 a:hover, a:active, a:focus, button:hover, button:active, button:focus {
   text-decoration: none;
   outline: none;
@@ -191,6 +231,9 @@ body > .header > nav.navbar .navbar-header .navbar-brand {
   padding: 0;
   position: relative;
   z-index: 99;
+}
+body > .header > nav.navbar .navbar-header .navbar-brand > img {
+  max-width: 250px;
 }
 @media only screen and (max-width: 768px) {
   body > .header .list li {

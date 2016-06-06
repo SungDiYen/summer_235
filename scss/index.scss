@@ -4,6 +4,9 @@
 
 main {
 	.container-fluid {
+		>.upper {
+			@include display-flex;
+		}
 		>.lower {
 			@include display-flex;
 		}
@@ -16,6 +19,7 @@ main {
 		content: '';
 		display: block;
 		position: absolute;
+		z-index: 9;
 		top: 0;
 		left: 0;
 		width:  100%;
@@ -66,6 +70,7 @@ $inactive: $grey;
 	position: relative;
 	a {
 		display: block;
+		//height: 100%;
 	}
 	.box_img {
 		margin-right: -15px;
@@ -102,51 +107,132 @@ $inactive: $grey;
 			font-size: rem(36);
 		}
 	}
-	&.fourth {
+	&.stretch {
 		@include display-flex;
 		@include flex-flow(column);
 		padding: 0;
+		>* {
+			@include flex(auto);
+			@include display-flex;
+		}
 	}
-	.goodies {
+	&.multi {
+		background: $og;
+		padding: 10px 10px 30px;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-content(stretch);
+	}
+	.multi-section {
 		//padding: 40px;
-		background: #d70870;
-		@include flex(auto);
+		//@include flex(auto);
 		@include display-flex;
 		@include justify-content(center);
 		@include align-items(center);
+		@include flex(1);
 		a {
+			@extend %ff-title;
 			display: block;
+			padding: 0px 30px;
+			//@include border-radius(50px);
+			@include transition(all .28s ease-in);
+			width: 85%;
 			text-align: center;
+			&:hover {
+				opacity: .72;
+			}
 		}
 		.icon {
-			font-size: rem(48);
-			color: $og;
-			background: $wt;
-			@include border-radius(50%);
-			padding: 8px;
+			display: block;
+			font-size: rem(38);
+			color: #fff;
+			//background: $wt;
+			//@include border-radius(50%);
+			padding-top: 8px;
 		}
 		.cfa {
-			color: $og;
-			background: $wt;
+			display: inline-block;
+			color: $wt;
+			//background: $wt;
 			font-size: rem(28);
-			@include border-radius(25px);
-			margin-top: 20px;
-			padding: 0 30px;
+			//@include border-radius(25px);
+			//margin-top: 20px;
+			//padding: 0 10px;
+		}
+		&.goodies a {
+			background: #FBCE3B;
+			border-bottom: 4px solid darken(#FBCE3B, 14);
+		}
+		&.activity a{
+			background: #ea424f;
+			border-bottom: 4px solid darken(#ea424f, 14);
+		}
+		&.seminar {
+			a {
+				background: #0d90ba;
+				border-bottom: 4px solid darken(#0d90ba, 14);
+			}
+			.icon {
+				font-size: rem(36);
+			}
 		}
 		@include screen(lg) {
-			.icon {
-				font-size: rem(32);
+			$font-size: rem(28);
+			a 	{
+				padding: 8px 10px;
+				width: 95%;
+				//@include display-flex;
+				//@include justify-content(flex-start);
+				//@include align-items(center);
 			}
-			.cfa {
-				font-size: rem(21);
-				margin-top: 10px;
+			&.seminar {
+				.icon {font-size: $font-size;}
+			}
+			.icon {
+				display: inline-block;
+				padding-top: 0;
+				font-size: $font-size;
+				margin-right: 5px;
+			}
+			.cfa {font-size: $font-size;}
+		}
+		@include screen(md) {
+			$font-size: rem(24);
+			a {
+				padding: 12px 15px;
+				width: 100%;
+				//@include display-flex;
+				//@include justify-content(flex-start);
+				//@include align-items(center);
+			}
+			&.seminar {
+				.icon {font-size: $font-size;}
+			}
+			.icon {
+				display: inline-block;
+				padding-top: 0;
+				font-size: $font-size;
+				margin-right: 5px;
+			}
+			.cfa {font-size: $font-size;}
+		}
+		&.title {
+			background: $og;
+			@include justify-content(center);
+			@extend %ff-title;
+			//border-bottom: 2px solid #fff;
+			.headline {
+				font-size: rem(40);
+				color: #fff;
 			}
 		}
 	}
 	.news {
-		border-bottom: 1px solid $og;
-		padding: 14px 45px;
+		//border-bottom: 1px solid $og;
+		padding: 30px 30px;
 		overflow: hidden;
+		@include display-flex;
+		@include flex-direction(column);
 		.title {
 			margin-bottom: 8px;
 			h3 {
@@ -184,9 +270,10 @@ $inactive: $grey;
 		}
 		.btn {
 			&.more {
-				float: right;
+				//float: right;
 				background: $grey;
 				@include border-radius(25px);
+				@include align-self(flex-end);
 				color: $wt;
 				padding: 0 20px;
 				letter-spacing: 1px;
@@ -200,6 +287,12 @@ $inactive: $grey;
 					font-size: rem(13);
 				}
 			}
+		}
+	}
+	.banner {
+		.banner_img {
+			width: 100%;
+			margin: 0;
 		}
 	}
 	&.normal {
@@ -220,6 +313,19 @@ $inactive: $grey;
 					background: rgba($og, .8);
 					
 				}
+			}
+		}
+	}
+	&.column {
+		@include display-flex;
+		@include flex-direction(column);
+		padding: 0;
+		.news {
+			@include flex(1)
+		}
+		.sponsor-banner {
+			img {
+				width: 100%;
 			}
 		}
 	}
@@ -256,6 +362,9 @@ $inactive: $grey;
 			}
 		}
 	}
+}
+.slider_village {
+	margin: 0;
 }
 
 //jQ
@@ -324,7 +433,9 @@ $inactive: $grey;
     	width: 84%;
     }
 }
-
+.embed-responsive-16by9 {
+	//padding-bottom: 28.125%;
+}
 
 ///
 ///
@@ -339,5 +450,151 @@ $inactive: $grey;
 	.modal-footer {
 		border: 0;
 		text-align: center;
+	}
+}
+
+
+%center-position {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+%basic-transition {
+	@include transition(all .28s ease-in);
+}
+/////
+.gif-wrap {
+	position: relative;
+	.gif {
+		position: relative;
+		z-index: 9;
+	}
+	.btn {
+		$size: 60px;
+		height: $size;
+		width:  $size;
+		z-index: 10;
+		@extend %center-position;
+		background: url('../images/gif/default.png');
+		@include transition(all .28s ease-in);
+		&:hover {
+			background: url('../images/gif/hover.png');
+		}
+	}
+	&.active {
+		.embed-responsive-16by9 {
+			z-index: 11;
+		}
+	}
+	.embed-responsive-16by9 {
+		margin-top: -56.25%;
+	}
+}
+
+/*
+.video-container {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		top: 0;
+		@include transition(all .28s ease-in);
+	.background {
+		width: 100%;
+		height: 100%;
+		@include transition(all .28s ease-in);
+		background: rgba(#000, 0);
+		position: fixed;
+	}
+	&.active {
+		z-index: 999;
+		position: absolute;
+		.background {
+			background: rgba(#000, .85);
+		}
+	}
+	.close-btn {
+		$size: 50px;
+		width:  $size;
+		height: $size;
+		position: absolute;
+		right: 20px;
+		top:   20px;
+		cursor: pointer;
+		&:after, &:before {
+			content: '';
+			height: 2px;
+			width: 40px;
+			background: #fff;
+			display: block;
+			@extend %center-position;
+			@extend %basic-transition;
+		}
+		&:after {
+			@include rotate(45deg);
+		}
+		&:before {
+			@include rotate(-45deg);
+		}
+		&:hover {
+			&:after, &:before {
+				background: red;
+			}
+		}
+	}
+}
+*/
+.pdf-wrap {
+	display: none;
+	position: fixed;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	text-align: center;
+	&.active {
+		display: block;
+	}
+	.pdf-bg	{
+		background: rgba(#000, .82);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+	}
+	.close-btn {
+		$size: 50px;
+		width:  $size;
+		height: $size;
+		position: absolute;
+		right: 20px;
+		top:   20px;
+		cursor: pointer;
+		&:after, &:before {
+			content: '';
+			height: 2px;
+			width: 40px;
+			background: #fff;
+			display: block;
+			@extend %center-position;
+			@extend %basic-transition;
+		}
+		&:after {
+			@include rotate(45deg);
+		}
+		&:before {
+			@include rotate(-45deg);
+		}
+		&:hover {
+			&:after, &:before {
+				background: red;
+			}
+		}
 	}
 }

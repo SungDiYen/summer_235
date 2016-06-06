@@ -1,0 +1,346 @@
+@import "basic/_layout.scss";
+
+//// TOXIC ////
+.modal-dialog {
+	margin-top: 360px;
+	.modal-header {
+		text-align: center;
+		h4 {
+			font-size: rem(24);
+		}
+	}
+	.modal-footer {
+		border: 0;
+		text-align: center;
+	}
+}
+
+
+///////////
+main {
+	@extend %container_layout;
+	.page-nav {
+		.upper {
+			margin-top: 30px;
+			margin-bottom: 80px;
+			.nav {
+				text-align: center;
+				margin-bottom: 40px;
+				li {
+					display: inline-block;
+					margin: 0 30px;
+					.btn {
+						// be extend
+						font-size: rem(21);
+						letter-spacing: 2px;
+						color: $og;
+						border: 1px solid $og;
+						padding: 10px 40px;
+						@include transition(all, .28s, ease-in);
+						&:hover, &:focus, &:active {
+							background: $og;
+							color: $wt;
+						}
+					}
+					&.active .btn {
+						background: $og;
+						color: $wt;
+					}
+				}
+			}
+		}
+	}
+	.page_title {
+		@extend %page_title;
+		@extend %ff-title;
+		padding: 0;
+		margin: 0 15px 40px;
+		border-bottom: 2px solid $og;
+		@include display-flex;
+		.headline-logo {
+			//margin-left: 30px;
+		}
+	}
+
+}
+.hotel-wrap {
+	@include display-flex;
+	@include flex-wrap(wrap);
+}
+.hotel {
+	.hotel_pic {
+		border: 3px solid $og;
+		@include border-radius(3px);
+		overflow: hidden;
+		height: 300px;
+		img {
+			width: 100%;
+		}
+	}
+	.hotel_name {
+		font-size: rem(28);
+		letter-spacing: 1px;
+		margin: 40px 0 20px;
+	}
+	.hotel_intro {
+		.hotel_intro_col {
+			@include display-flex;
+			@include flex-direction(row);
+			font-size: rem(15);
+			@include align-items(flex-start);
+			margin: 15px 0;
+			padding-bottom: 15px;
+			//border-bottom: 1px dashed lighten($bk, 70);
+			&:last-of-type {
+				border-bottom: 0;
+			}
+			>.title {
+				font-weight: 700;
+				color: $bk;
+				margin: 0;
+				@include flex(1 1);
+				line-height: 1.8;
+			}
+			>.content {
+				@include flex(4 1);
+				line-height: 1.8;
+				.list {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					&.order-by-dot {
+						list-style: outside disc;
+						padding-left: 1.5rem;
+					}
+					&.order_by_num {
+						list-style: outside decimal;
+						padding-left: 1.5rem;
+					}
+					+.ps {
+						padding-top: 20px;
+					}
+				}
+				.ps {
+					font-size: rem(13);
+					color: lighten($bk, 62);
+					line-height: 1.5;
+				}
+			}
+			&.link {
+				a {
+					color: $bk;
+					&:hover {
+						color: $og;
+					}
+				}
+			}
+		}
+	}
+}
+
+.bus-wrap {}
+.bus {
+	.tour-location-title {
+		display: inline-block;
+		font-size: rem(24);
+		color: $og;
+		//letter-spacing: 1rem;
+		padding: 5px 30px;
+		border: 2px solid $og;
+		@include border-radius(25px);
+	}
+	.tour {
+		border: 1px solid #d9d9d9;
+		@include border-radius(3px);
+		padding: 20px 30px;
+		margin-bottom: 30px;
+		.tour_title {
+			font-size: rem(24);
+			color: $bk;
+			margin: 10px 0 30px;
+		}
+		.tour_intro {
+			.intro_section {
+				margin-bottom: 30px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+				.intro_title {
+					font-size: rem(17);
+					//font-weight: 700;
+					color: $og;
+					margin-bottom: 10px;
+				}
+				.intro_content {
+					font-size: rem(17);
+					color: #606060;
+					/*.list-title {
+						margin-bottom: 10px;
+					}*/
+					.list {
+						list-style: none;
+						padding: 0;
+
+						&.by-normal {
+							li {
+								//margin-bottom: 5px;
+								font-size: rem(15);
+							}
+						}
+						&.by-step {
+							//@include display-flex;
+							//@include align-items(stretch);
+							//@include justify-content(center);
+							margin-bottom: 30px;
+							+.brackets {
+								margin-top: -30px;
+								margin-bottom: 60px;
+							}
+							li {
+								//@include flex(1);
+								@include display-flex;
+								@include flex-direction(column);
+								@include justify-content(center);
+								@include align-items(center);
+								position: relative;
+								float: left;
+								width: 230px;
+								height: 54px;
+								text-align: center;
+								border: 1px solid #a0a0a0;
+								padding: 5px 15px;
+								margin-bottom: 15px;
+								margin-right: 23px;
+								@include border-radius(50px);
+								&:after {
+									content: '→';
+									position: absolute;
+									margin: auto;
+									bottom: 10px;
+									right: -20px;
+									font-size: rem(24);
+
+								}
+								&:last-of-type {
+									margin-right: 0;
+									&:after {
+										display: none;
+									}
+								}
+							}
+							&.multi {
+								padding-left: 50px;
+								position: relative;
+								padding-bottom: 20px;
+								border-bottom:  1px dashed #a0a0a0;
+								margin-bottom:  20px + 10px;
+								&:last-of-type {
+									border-bottom: 0;
+								}
+								li.title {
+									$size: 30px;
+									width:  $size;
+									height: $size;
+									line-height: $size;
+									position: absolute;
+									left: 0;
+									top: ($size / 2);
+									background-color: $og;
+									border: 0px;
+									color: #fff;
+									padding: 0;
+									margin: 0;
+									//margin-right: 20px;
+									@include border-radius(50%);
+									&:after {
+										display: none;
+									}
+								}
+							}
+						}
+					}
+					.list_col {
+						@include display-flex;
+						@include flex-direction(row);
+						margin-bottom: 15px;
+						.col_title {
+							@include flex(1);
+							font-size: rem(15);
+							margin: 0;
+							+* {
+								@include flex(6);
+							}
+						}
+					}
+					.brackets {
+						display: block;
+						font-size: rem(14);
+						color: #999;
+						margin-left: 3px;
+					}
+				}
+				&.tour_route {}
+				&.tour_info {}
+			}
+		}
+	}
+}
+
+/////////////// gift
+
+.gift {
+	padding-bottom: 30px;
+	border-bottom: 1px dashed #cfcfcf;
+	margin-bottom: 30px;
+	.gift_pic {
+		img {
+			width: 100%;
+		}
+	}
+	.gift_text {
+		.text_title {
+			font-size: rem(26);
+			color: $og;
+			margin: 0 0 20px 0;	
+		}
+		.text_intro {
+			font-size: rem(15);
+			line-height: 1.6;
+			color: $bk;
+		}
+		.text_col {
+			@include display-flex;
+			@include flex-direction(row);
+			@include align-items(center);
+			font-size: rem(15);
+			margin-bottom: 10px;
+			.col_title {
+				font-size: inherit;
+				@include flex(1);
+				margin: 0;
+			}
+			.col_content {
+				font-size: inherit;
+				@include flex(5);
+				.link {
+					display: block;
+					//color: $og;
+					//margin-bottom: 5px;
+					font-size: inherit;
+					&:hover {
+						color: $og;
+					}
+				}
+			}
+			&.special {
+				font-size: rem(17);
+				.col_content {
+					border: 1px solid $og;
+					@include border-radius(25px);
+					padding: 5px 15px;
+					color: $og;
+				}
+			}
+		}
+	}
+}

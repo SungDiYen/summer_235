@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta property="og:title" content="content">
+	<meta property="og:type" content="content">
+	<meta property="og:url" content="content">
+	<meta property="og:image" content="content">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>臺灣夏至235</title>
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.twzipcode.min.js"></script>
+	<link rel="stylesheet" href="../css/moving.css">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-77259548-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+    <script>
+		function showLoading(msg){
+			$("BODY").append(
+				  '<div id="loadingDiv">'+
+				  '<img src="../images/ajax-loader.gif">'+
+				  '<br><span>'+msg+'</span>'+
+				  '</div>');
+				
+				var pos = 'fixed'; 
+				
+				$("#loadingDiv").css({
+					position: pos,
+					'text-align':'center',
+					'font-size':'14px',
+					'height':'80px',
+					'width':'300px',
+					'padding-top':'30px',
+					'background-color':'#fff',
+					'border': '2px solid  #333',
+					zIndex: 99999
+				});
+				
+				$("BODY").append('<div id="popup_overlay"></div>');
+				$("#popup_overlay").css({
+					position: 'absolute',
+					zIndex: 99998,
+					top: '0px',
+					left: '0px',
+					width: '100%',
+					height: $(document).height(),
+					background: '#000',
+					opacity: 0.4
+				});
+				
+				var top = ($(window).height() / 2)-62;
+				var left = ($(window).width() / 2)-102;
+				if( top < 0 ) top = 0;
+				if( left < 0 ) left = 0;
+				
+				
+				$("#loadingDiv").css({
+					top: top + 'px',
+					left: left + 'px'
+				});
+				$("#popup_overlay").height( $(document).height() );
+		
+		}
+		
+		function closeLoading(){
+			$("#popup_overlay").remove();
+			$("#loadingDiv").remove();
+		}
+    	$(document).ready(function(e) {
+            $('#twzipcode').twzipcode({'readonly': true});
+			$('#twzipcode > select').prop("required",true);
+
+        });
+    </script>
+</head>
+<body>
+	<header class="header container-fluid">
+		<nav class="navbar">
+			<div class="row">
+				<div class="col-lg-2 col-md-2  col-sm-2  col-xs-2 navbar-header">
+					<!-- what if they want RWD
+					<button type="button" class="navbar-toggle collapsed" 
+							data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" 
+							aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					-->
+					<a class="navbar-brand logo" href="http://www.taiwan235n.tw/">
+						<img src="../images/logo_top_left.png" alt="臺灣夏至235">
+					</a>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="http://www.taiwan235n.tw/pages/about.html">
+								<span class="en">ABOUT</span>關於臺灣夏至235
+							</a>
+						</li>
+						<li>
+							<a href="../news.php" >
+								<span class="en">NEWS</span>焦點新聞
+							</a>
+						</li>
+						<li>
+							<a href="http://www.taiwan235n.tw/moving/rules.html">
+								<span class="en">EVENT</span>活動專區
+							</a>
+						</li>
+						<li>
+							<a href="http://www.taiwan235n.tw/event.html">
+								<span class="en">SPECIAL</span>夏至限定
+							</a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#myModal">
+								<span class="en">VEDIO</span>影音專區
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 lang">
+					<ul class="nav">
+						<li class="lang-model active">中</li>
+						<li class="lang-model en">En</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="header_below"></div>
+	</header>
+
+	<main class="container">
+		<article>
+			<div class="upper">
+				<ul class="nav inline-gutter">
+					<li>
+						<a class="btn" href="rules.html">活動辦法</a>
+					</li>
+					<li>
+						<a class="btn" href="voting.html">人氣票選</a>
+					</li>
+					<li class="active">
+						<a class="btn" href="involve.html">我要參加</a>
+					</li>
+				</ul>
+				<div class="intro">
+					<h1 class="title">嘿！會『動』的夏至！ - 創意極短片人氣招募中！</h1>
+ 					<h3 class="title_exp">
+ 						創作無上限 你就是導演<br>
+						今年夏天用你的風格，玩出你的「臺灣夏至235」！<br>
+						只要拍攝上傳10-15秒的創意短片，眾多Sony好禮等你來拿！ 
+ 					</h3>
+				</div>
+			</div>
+			<div class="lower rules-involve">
+				<form name="InvolveForm" id="InvolveForm"  method="post" enctype="multipart/form-data" action="send_involve.php" onSubmit="showLoading('')">
+					<section class="section">
+						<div class="form-group row">
+							<label class="kerning nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2" for="user-name">姓名</label>
+							<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+								<input type="text" class="form-control" id="user-name" name="user_name" placeholder="姓名" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="user-edu" class="nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2">學校名稱</label>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+								<input type="text" class="form-control" id="user-edu" name="user_school" placeholder="學校名稱" required>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+								<input type="text" class="form-control" name="user_department" placeholder="科系（若無可免填）">
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+								<input type="text" class="form-control" name="user_grade" placeholder="年級" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2" for="user-phone">聯絡電話</label>
+							<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+								<input type="text" class="form-control" id="user-phone" name="user_phone" placeholder="聯絡電話" max="12" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2" for="user-email">E-mail</label>
+							<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+								<input type="email" class="form-control" id="user-email" name="user_email" placeholder="E-mail" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2" for="user-address">聯絡地址</label>
+                            <div id="twzipcode">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" data-role="county" data-style="form-control"></div>
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" data-role="district" data-style="form-control"></div>
+                              <div class="form-control-wrap dist_num col-lg-1 col-md-1 col-sm-1 col-xs-1" data-role="zipcode" data-style="form-control"></div>
+                            </div>
+							
+							<div class="form-control-wrap dist_addr col-lg-7 col-md-7 col-sm-7 col-xs-7 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+								<input type="text" class="form-control" id="user-address" name="user_address" placeholder="聯絡地址" required>
+							</div>
+						</div>
+					</section>
+					<section class="section">
+						<div class="form-group row">
+							<label class="nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2" for="vedio-name">作品名稱</label>
+							<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+								<input type="text" class="form-control" id="vedio-name" name="vedio_name" placeholder="限10字內" required maxlength="10">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="kerning nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2">影片</label>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+								<input type="file" name="vedio" class="form-control" required>
+							</div>
+							<div class="form-control-wrap vedio-notice col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								建議格式：MOV MPEG4 AVI WMV MPEGPS FLV MP4
+							</div>
+						</div>
+					</section>
+					<section class="section">
+						<div class="form-group row">
+							<label class="nec col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-1 col-xs-offset-2" for="">作品介紹</label>
+							<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+								<textarea class="form-control" rows="3" name="vedio_intro" placeholder="限50字內" max="50" maxlength="50" required></textarea>
+							</div>
+						</div>
+					</section>
+					<section class="section">
+						<div class="form_agree">
+							<input type="checkbox" name="agree" value="Y" required id="form_check">
+							<label for="form_check">我同意主辦單位對活動的各項規定</label>
+						</div>
+						<!--<label class="form_agress"><input type="checkbox" name="agree" value="Y" required>我同意主辦單位對活動的各項規定</label>-->
+						<div class="btns">
+							<button type="submit" class="btn upload">確定參加</button>
+						</div>
+					</section>
+				</form>
+			</div>
+		</article>
+	</main>
+
+	<footer class="footer">
+		<div class="top container-fluid">
+			<div class="row">
+				<div class="logo col-lg-2 col-lg-offset-3 col-md-offset-3  col-md-2 col-sm-2 col-sm-offset-3 col-xs-2 col-xs-offset-3">
+					<figure class="footer_bear">
+						<img src="../images/footer_bear.png" alt="臺灣夏至235">
+					</figure>
+				</div>
+				<section class="time col-lg-6  col-md-6 col-sm-6 col-xs-6">
+					<div class="title">距離丙申夏至還有⋯⋯</div>
+					<div class="time_content" id="clockdiv">
+						<div class="unit" role="dd">
+							<div class="center">
+								<h6 id="clock_days"></h6>
+								<p>Days</p>
+							</div>
+						</div>
+						<div class="unit" role="hh">
+							<div class="center">
+								<h6 id="clock_hours"></h6>
+								<p>Hours</p>
+							</div>
+						</div>
+						<div class="unit" role="mm">
+							<div class="center">
+								<h6 id="clock_minutes"></h6>
+								<p>Minutes</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="row">
+				<div class="col-lg-10 col-md-10 col-lg-offset-1  col-md-offset-1 col-sm-10 col-sm-offset-1">
+					<div class="sponsor">
+						<section class="upper">
+							<div class="sponsor_unit">
+								<div class="title">指導單位</div>
+								<div class="content" role="交通部">
+									<a href="http://www.motc.gov.tw/ch/index.jsp" target="_blank"><div class="sponsor-trifi"></div></a>
+								</div>
+							</div>
+							<div class="sponsor_unit">
+								<div class="title">主辦單位</div>
+								<div class="content" role="交通部觀光局">
+									<a href="http://www.taiwan.net.tw/w1.aspx" target="_blank"><div class="sponsor-MOTC"></div></a>
+								</div>
+							</div>
+							<div class="sponsor_unit">
+								<div class="title">執行單位</div>
+								<div class="content" role="安益國際展覽">
+									<a href="http://www.uniplan.com/index.php?id=246" target="_blank"><div class="sponsor-uni"></div></a>
+								</div>
+							</div>
+							<div class="counter">
+								<div class="title">總瀏覽人次</div>
+								<!--<div class="content" id="pvs">000000</div>-->
+								<script type="text/javascript" src="http://counter1.freecounter.ovh/private/counter.js?c=7bdd3022e16e38831ee11a0d08ed8b07"></script>
+							</div>
+						</section>
+						<section class="lower">
+							<div class="sponsor_unit">
+								<div class="title">贊助單位</div>
+								<div class="content">
+									<a href="http://www.family.com.tw/marketing/" target="_blank" role="全家超商"><div class="sponsor-familyM"></div></a>
+									<a href="http://www.sony.com.tw/zh" target="_blank" role="sony"><div class="sponsor-sony"></div></a>
+									<a href="http://www.kingyo.com.tw/myshop/kingtea168/index.aspx" target="_blank" role="清玉"><div class="sponsor-kingyo"></div></a>
+									<a href="http://www.bestradio.com.tw" target="_blank" role="好事聯播網"><div class="sponsor-bestRadio"></div></a>
+									<a href="http://www.gomaji.com/Taipei" target="_blank" role="夠麻吉"><div class="sponsor-gomaji"></div></a>
+									<a href="http://www.kuos.com" target="_blank" role="郭元益"><div class="sponsor-kuos"></div></a>
+									<a href="http://offers.amexnetwork.com/ilp?campaignID=Cam-0000537" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
+									<a href="https://www.facebook.com/Foduaiyu2012" target="_blank" role="佛都愛玉"><div class="sponsor-bu"></div></a>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom container-fluid">
+			<div class="row">
+				<div class="copy col-lg-10 col-md-10  col-lg-offset-1  col-md-offset-1 col-sm-10 col-sm-offset-1">
+					<p>中華民國交通部觀光局　版權所有　　|　　Copyright © 2016 Tourism Bureau, Rep. of China(Taiwan). All Rights Reserved.</p>
+					<p>地址：106臺北市忠孝東路四段290號9樓　　|　　電話：(02)2349-1500　　|　　24小時免付費旅遊諮詢熱線：0800-01176　　|　　聯絡我們：service@taiwan235n.tw</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">活動尚未開跑  敬請期待</h4>
+		      </div>
+		      <!--<div class="modal-body">
+		        敬請期待
+		      </div>-->
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+</body>
+<script src="../node_modules/slick/slick/slick.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/index.js"></script>
+</html>

@@ -1,0 +1,13 @@
+.popTab{
+	width:100%;
+	text-align:center;
+	word-break: break-word;
+}
+.popTab thead td{
+	background-color:#f9f9f9;
+}
+.popTab td{
+	border:1px solid #ddd;
+	font-size:12px;
+	padding:3px;
+}

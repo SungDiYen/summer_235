@@ -100,7 +100,7 @@ $NData  = $g_db->getRow($sqlstr);
 						</li>
 						<li>
 							<a href="#" data-toggle="modal" data-target="#myModal">
-								<span class="en">VEDIO</span>影音專區
+								<span class="en">VIDEO</span>影音專區
 							</a>
 						</li>
 					</ul>
@@ -215,7 +215,6 @@ $NData  = $g_db->getRow($sqlstr);
 							<div class="counter">
 								<div class="title">總瀏覽人次</div>
 								<!--<div class="content" id="pvs">000000</div>-->
-								<script type="text/javascript" src="http://counter1.freecounter.ovh/private/counter.js?c=7bdd3022e16e38831ee11a0d08ed8b07"></script>
 							</div>
 						</section>
 						<section class="lower">
@@ -223,7 +222,7 @@ $NData  = $g_db->getRow($sqlstr);
 								<div class="title">贊助單位</div>
 								<div class="content">
 									<a href="http://www.family.com.tw/marketing/" target="_blank" role="全家超商"><div class="sponsor-familyM"></div></a>
-									<a href="http://www.sony.com.tw/zh" target="_blank" role="sony"><div class="sponsor-sony"></div></a>
+									<a href="http://csr.sony.com.tw/section/sonycreativescienceaward" target="_blank" role="sony"><div class="sponsor-sony"></div></a>
 									<a href="http://www.kingyo.com.tw/myshop/kingtea168/index.aspx" target="_blank" role="清玉"><div class="sponsor-kingyo"></div></a>
 									<a href="http://www.bestradio.com.tw" target="_blank" role="好事聯播網"><div class="sponsor-bestRadio"></div></a>
 									<a href="http://www.gomaji.com/Taipei" target="_blank" role="夠麻吉"><div class="sponsor-gomaji"></div></a>
