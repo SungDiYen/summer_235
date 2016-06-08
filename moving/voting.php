@@ -47,9 +47,9 @@ $login_url = "";*/
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta property="og:site_name" content="臺灣夏至235">
 	<meta property="og:title" content="臺灣夏至235-人氣票選">
-	<meta property="og:type" content="vedio.movie">
-	<meta property="og:url" content="http://www.taiwan235n.tw/">
-	<meta property="og:image" content="http://taiwan235n.tw/images/_IMG_8099.jpg">
+	<meta property="og:description" content="創意極短片人氣招募中">
+	<meta property="og:url" content="http://www.taiwan235n.tw/moving/voting.php">
+	<meta property="og:image" content="https://dl.dropboxusercontent.com/u/38967251/_IMG_8099.jpg">
 	<meta property="og:app_id" content="638724836280634">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>臺灣夏至235</title>
@@ -106,18 +106,8 @@ $login_url = "";*/
 		<nav class="navbar">
 			<div class="row">
 				<div class="col-lg-2 col-md-2  col-sm-2  col-xs-2 navbar-header">
-					<!-- what if they want RWD
-					<button type="button" class="navbar-toggle collapsed" 
-							data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" 
-							aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					-->
 					<a class="navbar-brand logo" href="http://www.taiwan235n.tw/">
-						<img src="../images/logo_top_left.png" alt="臺灣夏至235">
+						<img src="http://www.taiwan235n.tw/images/logo_top_left.png" alt="臺灣夏至235">
 					</a>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
@@ -128,31 +118,50 @@ $login_url = "";*/
 							</a>
 						</li>
 						<li>
-							<a href="../news.php" >
+							<a href="http://www.taiwan235n.tw/news.php">
 								<span class="en">NEWS</span>焦點新聞
 							</a>
 						</li>
 						<li>
-							<a href="http://www.taiwan235n.tw/moving/rules.html">
+							<div class="dropdown">
+								<button id="nav-activities" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<span class="en">EVENT</span>活動專區
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="nav-activities">
+									<li><a href="http://www.taiwan235n.tw/eating/rules.html">掂掂吃夏至235</a></li>
+									<li><a href="http://www.taiwan235n.tw/moving/rules.html">嘿！會動的夏至</a></li>
+									<li><a href="http://www.eventaiwan.tw/ice235/">拯救夏至村</a></li>
+								</ul>
+							</div>
+							<!--<a href="http://www.taiwan235n.tw/moving/rules.html">
 								<span class="en">EVENT</span>活動專區
-							</a>
+							</a>-->
 						</li>
 						<li>
-							<a href="http://www.taiwan235n.tw/event.html">
-								<span class="en">SPECIAL</span>夏至限定
-							</a>
+							<div class="dropdown">
+								<button id="nav-activities" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<span class="en">SPECIAL</span>夏至限定
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="nav-activities">
+									<li><a href="http://www.taiwan235n.tw/hotel.html">好康優惠等你拿</a></li>
+								    <li><a href="http://www.taiwan235n.tw/event.html">主軸系列活動</a></li>
+								    <li><a class="pdf-popup">夏至235學術研討會</a></li>
+								</ul>
+							</div>
 						</li>
 						<li>
 							<a href="#" data-toggle="modal" data-target="#myModal">
-								<span class="en">VIDEO</span>影音專區
+								<span class="en">HIGHLIGHT</span>精彩時刻
 							</a>
 						</li>
 					</ul>
 				</div>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 lang">
 					<ul class="nav">
-						<li class="lang-model active">中</li>
-						<li class="lang-model en">En</li>
+						<li class="lang-model active"><a href="http://taiwan235n.tw/">中</a></li>
+						<li class="lang-model en"><a href="http://taiwan235n.tw/index_en.php">En</a></li>
 					</ul>
 				</div>
 			</div>
@@ -348,6 +357,11 @@ $login_url = "";*/
 		    </div>
 		  </div>
 	</div>
+	<div class="pdf-wrap">
+		<div class="pdf-bg pdf-close"></div>
+		<div class="close-btn pdf-close"></div>
+		<embed src="../speaker.pdf" height="780" width="840">
+	</div>
 </body>
 <script src="../node_modules/slick/slick/slick.js"></script>
 <script src="../js/layout.js"></script>
@@ -366,5 +380,14 @@ $login_url = "";*/
 			location.href=btn_href;
 		});
     });
+</script>
+<script>
+	$('.pdf-popup').click(function(e) {
+		$('.pdf-wrap').addClass('active');
+		console.log('pdf')
+	});
+	$('.pdf-close').click(function(e) {
+		$('.pdf-wrap').removeClass('active');
+	});
 </script>
 </html>

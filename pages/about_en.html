@@ -1,45 +1,19 @@
-<?php
-include("config.php");
-
-//資料
-$NowDate  = date("Y-m-d");
-	
-$OrderStr = "news_date desc,";
-
-$sqlstr = "select * from ".Table_News." where DelFlag='' and show_status='Y'  and news_date <='".date("Y-m-d")."' ".$WhereStr;
-$sqlstr .= " ORDER BY ".$OrderStr."`news_id` desc LIMIT 0,3";  //取1筆，如果增減改1那個數字
-$NewsList   = $g_db->getAll($sqlstr);
-?>
-<?php
-$counter = intval(file_get_contents("counter.dat"));
- 
-if (!isset($_COOKIE['visitor'])) {
-    $counter++;
-    $fp = fopen("counter.dat", "w");
-    flock($fp, LOCK_EX);   // do an exclusive lock
-    fwrite($fp, $counter);
-    flock($fp, LOCK_UN);   // release the lock
-    fclose($fp);
-    setcookie("visitor", 1, time()+3600);
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta property="og:site_name" content="臺灣夏至235">
-	<meta property="og:title" content="臺灣夏至235">
-	<meta property="og:description" content="距離丙申夏至還有⋯⋯">
-	<meta property="og:url" content="http://www.taiwan235n.tw/">
-	<meta property="og:image" content="https://dl.dropboxusercontent.com/u/38967251/_IMG_8099.jpg">
+	<meta property="og:title" content="content">
+	<meta property="og:type" content="content">
+	<meta property="og:url" content="content">
+	<meta property="og:image" content="content">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>臺灣夏至235</title>
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/index.css">
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/about.css">
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,15 +22,6 @@ if (!isset($_COOKIE['visitor'])) {
 
 		ga('create', 'UA-77259548-1', 'auto');
 		ga('send', 'pageview');
-
-		ga(function(tracker) {
-		  var pageview = tracker.get('pageview');
-
-		  var namedTracker = ga.getByName(pageview);
-		
-
-		  console.log(namedTracker);
-		});
 	</script>
 </head>
 <body>
@@ -71,7 +36,7 @@ if (!isset($_COOKIE['visitor'])) {
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="http://www.taiwan235n.tw/pages/about.html">
+							<a href="http://www.taiwan235n.tw/pages/about_en.html">
 								<span class="en">ABOUT</span>關於臺灣夏至235
 							</a>
 						</li>
@@ -104,7 +69,7 @@ if (!isset($_COOKIE['visitor'])) {
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="nav-activities">
 									<li><a href="http://www.taiwan235n.tw/hotel.html">好康優惠等你拿</a></li>
-								    <li><a href="http://www.taiwan235n.tw/event.html">主軸系列活動</a></li>
+								    <li><a href="http://www.taiwan235n.tw/event_en.html">主軸系列活動</a></li>
 								    <li><a class="pdf-popup">夏至235學術研討會</a></li>
 								</ul>
 							</div>
@@ -118,157 +83,54 @@ if (!isset($_COOKIE['visitor'])) {
 				</div>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 lang">
 					<ul class="nav">
-						<li class="lang-model active"><a href="http://taiwan235n.tw/">中</a></li>
-						<li class="lang-model en"><a href="http://taiwan235n.tw/index_en.php">En</a></li>
+						<li class="lang-model">
+							<a href="http://taiwan235n.tw/pages/about.html">中</a>
+						</li>
+						<li class="lang-model en active">
+							<a href="http://www.taiwan235n.tw/pages/about_en.html">En</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+		<div class="header_below"></div>
 	</header>
-	<main class="">
-		<article class="container-fluid">
-			<section class="row upper">
-				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 box">
-					<div class="box_img slider">
-						<div class="gif-wrap">
-							<figure class="gif">
-								<img src="images/gif/03.gif" alt="">
-							</figure>
-							<div class="btn vidio popup" data-order="youtube_3"></div>
-							<div class="video-wrap embed-responsive embed-responsive-16by9"></div>
-						</div>
-						<div class="gif-wrap">
-							<figure class="gif">
-								<img src="images/gif/01.gif" alt="">
-							</figure>
-							<div class="btn vidio popup" data-order="youtube_1"></div>
-							<div class="video-wrap embed-responsive embed-responsive-16by9"></div>
-						</div>
-						<div class="gif-wrap">
-							<figure class="gif">
-								<img src="images/gif/02.gif" alt="">
-							</figure>
-							<div class="btn vidio popup" data-order="youtube_2"></div>
-							<div class="video-wrap embed-responsive embed-responsive-16by9"></div>
-						</div>
+	<!---->
+	<main class="container">
+		<article class="row">
+			<section class="box">
+				<h1 class="title">About 23.5oN Taiwan Fun on the Tropic of Cancer</h1>
+				<h2 class="title-sub">Taiwan Fun on the Tropic of Cancer – <br>A Unique Taiwan-Only Summer Event!</h2>
+				<div class="wrap clearfix">
+					<div class="para left">
+						<p>
+							The Tropic of Cancer runs through the island of Taiwan and its offshore islands at the latitude 23.5 degrees north. This line is where the sun “turns around,” on the Summer Solstice, the day of the year when the sun shines the longest. Fusing the concepts of geographical space with the spirit of festival time, the Taiwan Tourism Bureau (Ministry of Transportation and Communications) has created this unique festival celebrating the Taiwan summer. The key elements on which Taiwan Fun on the Tropic of Cancer is built – any Taiwan spot that the line goes through, plus Taiwan’s unique summer foods, travel, art, and music!    
+						</p>
+						<p>
+							This summer we invite you to come on out and walk along with us, crossing from the East Rift Valley to the Alishan and on to the Siraya national scenic areas, then sail across the waters from Dongshi Fisherman’s Wharf to the Penghu Islands, feasting on all the terrific local specialty foods as you move west along the Taiwan Tropic of Cancer! Travelers with a passion for things Taiwan can tour this invisible line, immersing themselves in the rich local culture and feeling the warmth and passion of Taiwan’s summer festive spirit. Come enjoy the free-spirited Taiwan Fun on the Tropic of Cancer frolic with us!    
+						</p>
 					</div>
+					<figure class="pic left">
+						<img src="../images/about/info_01.jpg" alt="">
+					</figure>
 				</div>
-				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 box column">
-					<div class="news">
-						<div class="title">
-							<h3>
-								<span class="en">NEWS</span>
-								焦點新聞
-							</h3>
-						</div>
-						<div class="content">
-							<ul class="list-group">
-                            	<?php
-								foreach($NewsList as $key => $val){
-									
-									echo '<li class="list-group-item">
-											  <a href="news.php?nid='.$val['news_id'].'">
-												  <span class="date">'.date('m.d',strtotime($val['news_date'])).'</span>
-												  '.$val['news_title'].'
-											  </a>
-										  </li>';
-								}
-								?>
-								
-							</ul>
-						</div>
-						<a href="news.php" class="btn more" >more</a>
-					</div>
-					<div class="sponsor-banner">
-						<figure>
-							<img src="images/temp.jpg" alt="">
-						</figure>
-					</div>
-					<div class="logo center">
-						<img src="images/logo_center.png" alt="臺灣夏至235">
-					</div>
-				</div>
-			</section>
-			<section class="row lower">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box normal">
-					<a href="http://www.eventaiwan.tw/ice235/" target="_blank">
-						<figure class="box_img dot_patten slider_village">
-							<img src="images/banner960X920.jpg" alt="拯救夏至村">
-							<img src="images/banner960X920-2.jpg" alt="拯救夏至村">
-							<img src="images/banner960X920-3.jpg" alt="拯救夏至村">
-						</figure>
-						<div class="box_word">
-							<div class="upper">
-								<p>出冰吧！</p>
-							</div>
-							<div class="title">
-								<h3>拯救夏至村</h3>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box normal">
-					<a href="http://www.taiwan235n.tw/moving/rules.html">
-						<figure class="box_img dot_patten dark">
-							<img src="images/IMG_8099.jpg" class=""alt="嘿！會動的夏至！">
-						</figure>
-						<div class="box_word">
-							<div class="upper">
-								<p>夏至主題活動</p>
-							</div>
-							<div class="title">
-								<h3>嘿！會動的夏至！</h3>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box normal">
-					<a href="http://www.taiwan235n.tw/eating/rules.html">
-						<figure class="box_img dot_patten">
-							<img src="images/_IMG_7468.jpg" alt="主題活動">
-						</figure>
-						<div class="box_word">
-							<div class="upper">
-								<p>請你跟我這樣做</p>
-							</div>
-							<div class="title">
-								<h3>掂掂吃夏至235</h3>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-3  col-md-3 col-sm-3 box multi">
-					<div class="multi-section title">
-						<div class="headline">夏至專區</div>
-					</div>
-					<div class="multi-section goodies">
-						<a href="http://www.taiwan235n.tw/hotel.html">
-							<i class="fa fa-gift icon" aria-hidden="true"></i>
-							<div class="cfa">好康優惠等你拿</div>
-						</a>
-					</div>
-					<div class="multi-section activity">
-						<a href="http://www.taiwan235n.tw/event.html">
-							<i class="fa fa-sun-o icon" aria-hidden="true"></i>
-							<div class="cfa">主軸系列活動</div>
-						</a>
-					</div>
-					<div class="multi-section seminar">
-						<a href="#" id="pdf-popup">
-							<i class="fa fa-graduation-cap icon" aria-hidden="true"></i>
-							<div class="cfa">夏至235學術研討會</div>
-						</a>
-					</div>
-				</div>
+				<figure class="pics">
+					<img src="../images/about/i_02.jpg" alt="">
+					<img src="../images/about/i_03.jpg" alt="">
+					<img src="../images/about/i_04.jpg" alt="">
+					<img src="../images/about/i_05.jpg" alt="">
+					<img src="../images/about/i_06.jpg" alt="">
+				</figure>
 			</section>
 		</article>
 	</main>
+	<!---->
 	<footer class="footer">
 		<div class="top container-fluid">
 			<div class="row">
 				<div class="logo col-lg-2 col-lg-offset-3 col-md-offset-3  col-md-2 col-sm-2 col-sm-offset-3 col-xs-2 col-xs-offset-3">
 					<figure class="footer_bear">
-						<img src="images/footer_bear.png" alt="臺灣夏至235">
+						<img src="../images/footer_bear.png" alt="">
 					</figure>
 				</div>
 				<section class="time col-lg-6  col-md-6 col-sm-6 col-xs-6">
@@ -319,9 +181,8 @@ if (!isset($_COOKIE['visitor'])) {
 							</div>
 							<div class="counter">
 								<div class="title">總瀏覽人次</div>
-								<div class="content" id="pvs">
-									<?php echo  $counter+6000;?>
-								</div>
+								<!--<div class="content" id="pvs">000000</div>-->
+							
 							</div>
 						</section>
 						<section class="lower">
@@ -334,7 +195,7 @@ if (!isset($_COOKIE['visitor'])) {
 									<a href="http://www.bestradio.com.tw" target="_blank" role="好事聯播網"><div class="sponsor-bestRadio"></div></a>
 									<a href="http://www.gomaji.com/Taipei" target="_blank" role="夠麻吉"><div class="sponsor-gomaji"></div></a>
 									<a href="http://www.kuos.com" target="_blank" role="郭元益"><div class="sponsor-kuos"></div></a>
-									<a href="http://offers.amexnetwork.com/ilp?campaignID=Cam-0000537" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
+									<a href="https://www.americanexpress.com/taiwan" target="_blank" role="美國運通"><div class="sponsor-AE"></div></a>
 									<a href="https://www.facebook.com/Foduaiyu2012" target="_blank" role="佛都愛玉"><div class="sponsor-bu"></div></a>
 								</div>
 							</div>
@@ -359,8 +220,12 @@ if (!isset($_COOKIE['visitor'])) {
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        <h4 class="modal-title" id="myModalLabel">活動尚未開跑  敬請期待</h4>
 		      </div>
+		      <!--<div class="modal-body">
+		        敬請期待
+		      </div>-->
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+		        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
 		      </div>
 		    </div>
 		  </div>
@@ -368,38 +233,12 @@ if (!isset($_COOKIE['visitor'])) {
 	<div class="pdf-wrap">
 		<div class="pdf-bg pdf-close"></div>
 		<div class="close-btn pdf-close"></div>
-		<embed src="speaker.pdf" height="780" width="840">
+		<embed src="../speaker.pdf" height="780" width="840">
 	</div>
 </body>
-
-<script src="node_modules/slick/slick/slick.js"></script>
-<script src="js/layout.js"></script>
-<script src="js/index.js"></script>
-<script>
-	$(".popup").click(function () {
-		$('.gif-wrap').addClass('active');
-		var order = $(this).data('order');
-		//console.log(order);
-		if (order == 'youtube_1') {
-
-			youtube_code = "bwRzv8LU66s";
-			video = '<iframe class="embed-responsive-item" width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/'+youtube_code+'?autoplay=1&playlist='+youtube_code+'&loop=1" ></iframe>';
-		}else if (order == 'youtube_2') {
-
-			youtube_code = "NRaIKd9OXN0";
-			video = '<iframe class="embed-responsive-item" width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/'+youtube_code+'?autoplay=1&playlist='+youtube_code+'&loop=1" ></iframe>';
-		}else if (order == 'youtube_3'){
-
-			youtube_code = "AjRMhCE44eM";
-			video = '<iframe class="embed-responsive-item" width="560" height="315" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/'+youtube_code+'?autoplay=1&playlist='+youtube_code+'&loop=1" ></iframe>';
-		}else {
-			video = '';
-		}
-
-		$(this).siblings('.video-wrap').append(video);
-	});
-	
-</script>
+<script src="../node_modules/slick/slick/slick.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/index.js"></script>
 <script>
 	$('.pdf-popup').click(function(e) {
 		$('.pdf-wrap').addClass('active');
@@ -409,4 +248,12 @@ if (!isset($_COOKIE['visitor'])) {
 		$('.pdf-wrap').removeClass('active');
 	});
 </script>
+<style>
+	main.container .box .title {
+		font-size: 1.8rem;
+	}
+	main.container .box .title-sub {
+		font-size: 2.8rem;
+	}
+</style>
 </html>

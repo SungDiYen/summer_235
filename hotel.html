@@ -30,42 +30,61 @@
 			<div class="row">
 				<div class="col-lg-2 col-md-2  col-sm-2  col-xs-2 navbar-header">
 					<a class="navbar-brand logo" href="http://www.taiwan235n.tw/">
-						<img src="images/logo_top_left.png" alt="臺灣夏至235">
+						<img src="http://www.taiwan235n.tw/images/logo_top_left.png" alt="臺灣夏至235">
 					</a>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="/pages/about.html">
+							<a href="http://www.taiwan235n.tw/pages/about.html">
 								<span class="en">ABOUT</span>關於臺灣夏至235
 							</a>
 						</li>
 						<li>
-							<a href="news.php" >
+							<a href="http://www.taiwan235n.tw/news.php">
 								<span class="en">NEWS</span>焦點新聞
 							</a>
 						</li>
 						<li>
-							<a href="http://www.taiwan235n.tw/moving/rules.html">
+							<div class="dropdown">
+								<button id="nav-activities" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<span class="en">EVENT</span>活動專區
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="nav-activities">
+									<li><a href="http://www.taiwan235n.tw/eating/rules.html">掂掂吃夏至235</a></li>
+									<li><a href="http://www.taiwan235n.tw/moving/rules.html">嘿！會動的夏至</a></li>
+									<li><a href="http://www.eventaiwan.tw/ice235/">拯救夏至村</a></li>
+								</ul>
+							</div>
+							<!--<a href="http://www.taiwan235n.tw/moving/rules.html">
 								<span class="en">EVENT</span>活動專區
-							</a>
+							</a>-->
 						</li>
 						<li>
-							<a href="http://www.taiwan235n.tw/event.html">
-								<span class="en">SPECIAL</span>夏至限定
-							</a>
+							<div class="dropdown">
+								<button id="nav-activities" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<span class="en">SPECIAL</span>夏至限定
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="nav-activities">
+									<li><a href="http://www.taiwan235n.tw/hotel.html">好康優惠等你拿</a></li>
+								    <li><a href="http://www.taiwan235n.tw/event.html">主軸系列活動</a></li>
+								    <li><a class="pdf-popup">夏至235學術研討會</a></li>
+								</ul>
+							</div>
 						</li>
 						<li>
 							<a href="#" data-toggle="modal" data-target="#myModal">
-								<span class="en">VIDEO</span>影音專區
+								<span class="en">HIGHLIGHT</span>精彩時刻
 							</a>
 						</li>
 					</ul>
 				</div>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 lang">
 					<ul class="nav">
-						<li class="lang-model active">中</li>
-						<li class="lang-model en">En</li>
+						<li class="lang-model active"><a href="http://taiwan235n.tw/">中</a></li>
+						<li class="lang-model en"><a href="http://taiwan235n.tw/index_en.php">En</a></li>
 					</ul>
 				</div>
 			</div>
@@ -569,38 +588,6 @@
 							</p>
 						</div>
 					</div>
-					<!--<div class="hotel_intro_col package">
-						<h5 class="title">專案說明</h5>
-						<div class="content">
-							<ul class="list order-by-dot">
-								<li>雅緻房型住宿乙晚</li>
-								<li>怡情軒自助早餐(依房型贈送)</li>
-								<li>愛河貢多拉船票(依房型贈送)</li>
-								<li>哈瑪星公車票券(依房型贈送)</li>
-								<li>贈送礦泉水、咖啡包、茶包、水果</li>
-								<li>免費使用健身房(需自備球鞋)</li>
-								<li>免費自助洗衣服務(開放時間早上七點~晚上十點)</li>
-								<li>免費房內寬頻上網(需自備筆記型電腦/客房內備有網路線)</li>
-							</ul>
-							<p class="ps">
-								貢多拉營業時間：<br>
-								平日18:00-23:00，假日16:00-23:00，特別假日14:00-23:00
-								<br>
-								哈瑪星公車票:<br>
-								平日（二至五）10時至17時：60分鐘一班車<br>
-								假日（含國定假日）10時至18時：30分鐘一班車<br>
-								周一休息
-							</p>
-						</div>
-					</div>
-					<div class="hotel_intro_col notice">
-						<h5 class="title">注意事項</h5>
-						<div class="content">
-							<ul class="list order_by_num">
-								<li>如遇周六或連續假日每房加價NT$500。</li>
-							</ul>
-						</div>
-					</div>-->
 					<div class="hotel_intro_col period">
 						<h5 class="title">優惠期間</h5>
 						<div class="content">即日起~2016/09/30</div>
@@ -615,7 +602,9 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="http://kaohsiung.chateaudechine.com/" target="_blank">http://kaohsiung.chateaudechine.com/</a>
+						<a href="http://kending.fullon-hotels.com.tw/" target="_blank">
+							http://kending.fullon-hotels.com.tw/
+						</a>
 					</div>
 				</div>
 			</div>
@@ -1481,8 +1470,8 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="www.dm-love.com" target="_blank">
-							www.dm-love.com
+						<a href="http://dm-love.com/tw/" target="_blank">
+							http://dm-love.com/tw/
 						</a>
 					</div>
 				</div>
@@ -1493,7 +1482,7 @@
 					<img src="images/hotels/demo.jpg" alt="">
 				</figure>
 				<div class="hotel_intro">
-					<h4 class="hotel_name">探索中和館</h4>
+					<h4 class="hotel_name">探索汽車旅館中和分館</h4>
 					<div class="hotel_intro_col package">
 						<h5 class="title">優惠方式</h5>
 						<div class="content">
@@ -1529,8 +1518,8 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="www.dm-love.com" target="_blank">
-							www.dm-love.com
+						<a href="http://dm-love.com/tw/" target="_blank">
+							http://dm-love.com/tw/
 						</a>
 					</div>
 				</div>
@@ -1576,8 +1565,8 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="www.dm-love.com" target="_blank">
-							www.dm-love.com
+						<a href="http://dm-love.com/tw/" target="_blank">
+							http://dm-love.com/tw/
 						</a>
 					</div>
 				</div>
@@ -1623,8 +1612,8 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="www.dm-love.com" target="_blank">
-							www.dm-love.com
+						<a href="http://dm-love.com/tw/" target="_blank">
+							http://dm-love.com/tw/
 						</a>
 					</div>
 				</div>
@@ -1764,8 +1753,8 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="www.hotelfuntw.com" target="_blank">
-							www.hotelfuntw.com
+						<a href="http://www.hotelfuntw.com/tw/room_view.php?no=39" target="_blank">
+							http://www.hotelfuntw.com/tw/room_view.php?no=39
 						</a>
 					</div>
 				</div>
@@ -2695,8 +2684,8 @@
 					</div>
 					<div class="hotel_intro_col link">
 						<!--<h5 class="title"></h5>-->
-						<a href="www.hotel-hi.com.tw" target="_blank">
-							www.hotel-hi.com.tw
+						<a href="http://www.hotel-hi.com.tw/" target="_blank">
+							http://www.hotel-hi.com.tw/
 						</a>
 					</div>
 				</div>
@@ -2882,7 +2871,7 @@
 		<!--53-->
 			<div class="hotel col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<figure class="hotel_pic">
-					<img src="images/hotels/demo.jpg" alt="">
+					<img src="images/hotels/053.jpg" alt="">
 				</figure>
 				<div class="hotel_intro">
 					<h4 class="hotel_name">星享道酒店</h4>
@@ -2936,7 +2925,7 @@
 		<!--54-->
 			<div class="hotel col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<figure class="hotel_pic">
-					<img src="images/hotels/demo.jpg" alt="">
+					<img src="images/hotels/054.jpg" alt="">
 				</figure>
 				<div class="hotel_intro">
 					<h4 class="hotel_name">文華道會館</h4>
@@ -2983,6 +2972,68 @@
 					<div class="hotel_intro_col link">
 						<a href="www.inone.com.tw" target="_blank">
 							www.inone.com.tw
+						</a>
+					</div>
+				</div>
+			</div>
+		<!--55-->
+			<div class="hotel col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<figure class="hotel_pic">
+					<img src="images/hotels/055.jpg" alt="">
+				</figure>
+				<div class="hotel_intro">
+					<h4 class="hotel_name">旗津道沙灘酒店</h4>
+					<div class="hotel_intro_col package">
+						<h5 class="title">住房優惠</h5>
+						<div class="content">
+							<ul class="list order-by-dot">
+								<li>水光人文客房(一大床) 平日＄2,499元，加贈雙人晚餐或午餐任選一套</li>
+								<li>曙光家庭客房(二大床) 平日＄3,599元，加贈四人晚餐或午餐任選一套</li>
+							</ul>
+						</div>
+					</div>
+					<div class="hotel_intro_col package">
+						<h5 class="title">餐飲優惠</h5>
+						<div class="content">
+							<ul class="list order-by-dot">
+								<li>旗望角午/晚餐(兩桌以下，不含酒水)享9折+10%優惠</li>
+								<li>Young Bar消費滿＄388元以上，享9折+10%優惠</li>
+								<li>捕魚飯+老饕三寶牛肉麵特價＄520元(原價＄588元)(恕不分售)</li>
+							</ul>
+						</div>
+					</div>
+					<div class="hotel_intro_col notice">
+						<h5 class="title">注意事項</h5>
+						<div class="content">
+							<ul class="list order_by_num">
+								<li>限週日至週五使用</li>
+								<li>中秋連續假期9/15-9/17不適用</li>
+							</ul>
+						</div>
+					</div>
+					<div class="hotel_intro_col period">
+						<h5 class="title">優惠期間</h5>
+						<div class="content">
+							<ul class="list">
+								<li>
+									2016/06/22~09/30
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="hotel_intro_col phone">
+						<h5 class="title">聯絡電話</h5>
+						<div class="content">
+							(07)572-1818
+						</div>
+					</div>
+					<div class="hotel_intro_col phone">
+						<h5 class="title">地址</h5>
+						<div class="content">高雄市旗津區旗津三路1050號3樓</div>
+					</div>
+					<div class="hotel_intro_col link">
+						<a href="http://www.inyounghotel.com.tw/" target="_blank">
+							http://www.inyounghotel.com.tw/
 						</a>
 					</div>
 				</div>
@@ -3076,8 +3127,22 @@
 			</div>
 		</div>
 	</footer>
+	<div class="pdf-wrap">
+		<div class="pdf-bg pdf-close"></div>
+		<div class="close-btn pdf-close"></div>
+		<embed src="speaker.pdf" height="780" width="840">
+	</div>
 </body>
 <script src="node_modules/slick/slick/slick.js"></script>
 <script src="js/layout.js"></script>
 <script src="js/news.js"></script>
+<script>
+	$('.pdf-popup').click(function(e) {
+		$('.pdf-wrap').addClass('active');
+		console.log('pdf')
+	});
+	$('.pdf-close').click(function(e) {
+		$('.pdf-wrap').removeClass('active');
+	});
+</script>
 </html>

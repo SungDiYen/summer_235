@@ -301,7 +301,10 @@ main {
 		.text_title {
 			font-size: rem(26);
 			color: $og;
-			margin: 0 0 20px 0;	
+			margin: 0 0 20px 0;
+			a {
+				color: $og;
+			}
 		}
 		.text_intro {
 			font-size: rem(15);

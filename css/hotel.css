@@ -182,6 +182,22 @@ main {
   color: #fff;
 }
 
+.pdf-wrap .close-btn:after, .pdf-wrap .close-btn:before {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pdf-wrap .close-btn:after, .pdf-wrap .close-btn:before {
+  -moz-transition: all 0.28s ease-in;
+  -o-transition: all 0.28s ease-in;
+  -webkit-transition: all 0.28s ease-in;
+  transition: all 0.28s ease-in;
+}
+
 a:hover, a:active, a:focus, button:hover, button:active, button:focus {
   text-decoration: none;
   outline: none;
@@ -276,6 +292,31 @@ body > .header .list li a:hover, body > .header .list li a:focus {
     font-size: 1.2rem;
   }
 }
+body > .header .list li .dropdown .dropdown-toggle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #0c1318;
+  padding: 6px 45px;
+  background: transparent;
+}
+body > .header .list li .dropdown .dropdown-toggle .en {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #f8f7ed;
+  text-align: center;
+}
+body > .header .list li .dropdown-menu {
+  background: rgba(255, 255, 255, 0.9);
+  float: left !important;
+  position: absolute !important;
+}
+body > .header .list li .dropdown-menu a {
+  padding: 10px 45px;
+}
 body > .header .lang {
   display: -webkit-flex;
   display: flex;
@@ -287,6 +328,13 @@ body > .header .lang > .nav {
   display: flex;
 }
 body > .header .lang > .nav li {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  margin: 0 4px;
+}
+body > .header .lang > .nav li a {
   color: #9c6200;
   font-size: 1.6rem;
   font-weight: 900;
@@ -298,7 +346,6 @@ body > .header .lang > .nav li {
   border-radius: 50px;
   text-align: center;
   padding: 2px;
-  margin: 0 4px;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0);
   -moz-transition: all 0.2s ease-in;
@@ -306,23 +353,24 @@ body > .header .lang > .nav li {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-body > .header .lang > .nav li.en {
+body > .header .lang > .nav li.en a {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.45;
   position: relative;
   top: 2px;
 }
-body > .header .lang > .nav li.active {
+body > .header .lang > .nav li:hover a {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+body > .header .lang > .nav li.active a {
   color: #ffa800;
   background: #fff;
 }
-body > .header .lang > .nav li.active:hover {
+body > .header .lang > .nav li.active a:hover a {
   color: #ffa800;
-}
-body > .header .lang > .nav li:hover {
-  border: 1px solid #fff;
-  color: #fff;
 }
 
 body > .footer > .top {
@@ -456,6 +504,60 @@ body > .footer > .bottom p {
 }
 body > .footer > .bottom p:first-of-type {
   margin-bottom: 4px;
+}
+
+.pdf-wrap {
+  display: none;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  text-align: center;
+}
+.pdf-wrap.active {
+  display: block;
+}
+.pdf-wrap .pdf-bg {
+  background: rgba(0, 0, 0, 0.82);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.pdf-wrap .close-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.pdf-wrap .close-btn:after, .pdf-wrap .close-btn:before {
+  content: '';
+  height: 2px;
+  width: 40px;
+  background: #fff;
+  display: block;
+}
+.pdf-wrap .close-btn:after {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.pdf-wrap .close-btn:before {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.pdf-wrap .close-btn:hover:after, .pdf-wrap .close-btn:hover:before {
+  background: red;
 }
 
 .modal-dialog {
@@ -745,6 +847,9 @@ main .page_title {
   font-size: 2.6rem;
   color: #ffa800;
   margin: 0 0 20px 0;
+}
+.gift .gift_text .text_title a {
+  color: #ffa800;
 }
 .gift .gift_text .text_intro {
   font-size: 1.5rem;

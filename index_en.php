@@ -71,7 +71,7 @@ if (!isset($_COOKIE['visitor'])) {
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 list clearfix">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="http://www.taiwan235n.tw/pages/about.html">
+							<a href="http://www.taiwan235n.tw/pages/about_en.html">
 								<span class="en">ABOUT</span>關於臺灣夏至235
 							</a>
 						</li>
@@ -104,7 +104,7 @@ if (!isset($_COOKIE['visitor'])) {
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="nav-activities">
 									<li><a href="http://www.taiwan235n.tw/hotel.html">好康優惠等你拿</a></li>
-								    <li><a href="http://www.taiwan235n.tw/event.html">主軸系列活動</a></li>
+								    <li><a href="http://www.taiwan235n.tw/event_en.html">主軸系列活動</a></li>
 								    <li><a class="pdf-popup">夏至235學術研討會</a></li>
 								</ul>
 							</div>
@@ -118,8 +118,12 @@ if (!isset($_COOKIE['visitor'])) {
 				</div>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 lang">
 					<ul class="nav">
-						<li class="lang-model active"><a href="http://taiwan235n.tw/">中</a></li>
-						<li class="lang-model en"><a href="http://taiwan235n.tw/index_en.php">En</a></li>
+						<li class="lang-model">
+							<a href="http://taiwan235n.tw/">中</a>
+						</li>
+						<li class="lang-model en active">
+							<a href="http://taiwan235n.tw/index_en.php">En</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -248,7 +252,7 @@ if (!isset($_COOKIE['visitor'])) {
 						</a>
 					</div>
 					<div class="multi-section activity">
-						<a href="http://www.taiwan235n.tw/event.html">
+						<a href="http://www.taiwan235n.tw/event_en.html">
 							<i class="fa fa-sun-o icon" aria-hidden="true"></i>
 							<div class="cfa">主軸系列活動</div>
 						</a>
